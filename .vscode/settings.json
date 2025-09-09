@@ -1,0 +1,51 @@
+{
+  // Copilot Configuration
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": false,
+    "plaintext": false,
+    "markdown": true,
+    "astro": true,
+    "typescript": true,
+    "javascript": true,
+    "css": true,
+    "scss": true
+  },
+  "github.copilot.editor.enableAutoCompletions": true,
+  "github.copilot.chat.experimental.codeGeneration.instructions": [
+    "Use TypeScript for all JavaScript code",
+    "Follow Astro best practices",
+    "Use modern ES6+ syntax",
+    "Prefer functional components over class components",
+    "Use semantic HTML elements"
+  ],
+
+  // File Association & Language Support
+  "files.associations": {
+    "*.astro": "astro"
+  },
+  "emmet.includeLanguages": {
+    "astro": "html"
+  },
+
+  // TypeScript & IntelliSense
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.suggest.autoImports": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+
+  // Formatting
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit"
+  },
+
+  // File Explorer
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.astro": "${capture}.d.ts",
+    "package.json": "package-lock.json,yarn.lock,pnpm-lock.yaml"
+  }
+}

@@ -1,5 +1,18 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
 
-// https://astro.build/config
-export default defineConfig({});
+export default defineConfig({
+  site: 'https://yourname.dev',
+  integrations: [],
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `@import "src/styles/globals.scss";`
+        }
+      }
+    }
+  },
+  build: {
+    assets: 'assets'
+  }
+});
