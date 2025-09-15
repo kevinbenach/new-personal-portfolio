@@ -1,0 +1,190 @@
+---
+import Card from '@/components/ui/Card.astro';
+import Badge from '@/components/ui/Badge.astro';
+import { skills, skillCategories } from '@/data/skills';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+
+// Group skills by category
+const skillsByCategory = skillCategories.map(category => ({
+  ...category,
+  skills: skills.filter(skill => skill.category === category.id)
+}));
+
+// Function to get proficiency width
+const getProficiencyWidth = (proficiency: string) => {
+  switch (proficiency) {
+    case 'beginner': return '25%';
+    case 'intermediate': return '50%';
+    case 'advanced': return '75%';
+    case 'expert': return '100%';
+    default: return '50%';
+  }
+};
+
+// Function to get proficiency color
+const getProficiencyColor = (proficiency: string) => {
+  switch (proficiency) {
+    case 'beginner': return 'bg-red-400';
+    case 'intermediate': return 'bg-yellow-400';
+    case 'advanced': return 'bg-blue-400';
+    case 'expert': return 'bg-green-400';
+    default: return 'bg-gray-400';
+  }
+};
+---
+
+<section id="skills" class={`py-20 bg-gray-50 dark:bg-gray-800 ${className}`}>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <h2 class="heading-lg mb-6">Skills & Technologies</h2>
+        <p class="body-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          A comprehensive overview of the technologies and tools I use to build modern, scalable applications.
+        </p>
+      </div>
+
+      <!-- Skills Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        {skillsByCategory.map((category) => (
+          <Card variant="elevated" class="p-8 hover:shadow-hard transition-all duration-300">
+            <div class="flex items-center mb-6">
+              <div class={`w-4 h-4 rounded-full mr-3 ${
+                category.color === 'primary' ? 'bg-primary-500' :
+                category.color === 'accent' ? 'bg-accent-500' :
+                category.color === 'success' ? 'bg-green-500' :
+                'bg-yellow-500'
+              }`}></div>
+              <h3 class="heading-md text-gray-900 dark:text-white">
+                {category.name}
+              </h3>
+              <Badge variant="secondary" size="sm" class="ml-auto">
+                {category.skills.length}
+              </Badge>
+            </div>
+
+            <div class="space-y-4">
+              {category.skills.map((skill) => (
+                <div class="skill-item">
+                  <div class="flex justify-between items-center mb-2">
+                    <span class="font-medium text-gray-900 dark:text-white text-sm">
+                      {skill.name}
+                    </span>
+                    <Badge
+                      variant={
+                        skill.proficiency === 'expert' ? 'success' :
+                        skill.proficiency === 'advanced' ? 'primary' :
+                        skill.proficiency === 'intermediate' ? 'warning' :
+                        'secondary'
+                      }
+                      size="sm"
+                    >
+                      {skill.proficiency}
+                    </Badge>
+                  </div>
+                  <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                    <div
+                      class={`h-2 rounded-full transition-all duration-700 ease-out ${getProficiencyColor(skill.proficiency)}`}
+                      style={`width: 0; animation: fillSkill 0.7s ease-out forwards; animation-delay: ${Math.random() * 0.5}s;`}
+                      data-width={getProficiencyWidth(skill.proficiency)}
+                    ></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Card>
+        ))}
+      </div>
+
+      <!-- Technology Highlights -->
+      <div class="text-center">
+        <h3 class="heading-md mb-8 text-gray-900 dark:text-white">
+          Currently Learning & Exploring
+        </h3>
+        <div class="flex flex-wrap justify-center gap-3">
+          {['Rust', 'Go', 'Kubernetes', 'Terraform', 'Three.js', 'WebGL', 'Machine Learning', 'Blockchain'].map((tech) => (
+            <Badge variant="outline" size="md" class="hover:bg-primary-50 hover:border-primary-200 transition-colors duration-200">
+              {tech}
+            </Badge>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fillSkill {
+    from {
+      width: 0;
+    }
+    to {
+      width: var(--target-width);
+    }
+  }
+
+  .skill-item:hover .bg-primary-400,
+  .skill-item:hover .bg-green-400,
+  .skill-item:hover .bg-blue-400,
+  .skill-item:hover .bg-yellow-400,
+  .skill-item:hover .bg-red-400 {
+    transform: scaleY(1.2);
+  }
+</style>
+
+<script>
+  // Animate skill bars when they come into view
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.3
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const skillBars = entry.target.querySelectorAll('[data-width]');
+        skillBars.forEach((bar, index) => {
+          setTimeout(() => {
+            const targetWidth = bar.getAttribute('data-width');
+            if (targetWidth) {
+              bar.style.setProperty('--target-width', targetWidth);
+              bar.style.animationPlayState = 'running';
+            }
+          }, index * 100);
+        });
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  const skillsSection = document.getElementById('skills');
+  if (skillsSection) {
+    observer.observe(skillsSection);
+  }
+
+  // Add hover effects to skill items
+  document.querySelectorAll('.skill-item').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      const skillBar = item.querySelector('[data-width]');
+      if (skillBar) {
+        skillBar.style.transform = 'scaleY(1.2)';
+        skillBar.style.boxShadow = '0 0 10px rgba(59, 130, 246, 0.5)';
+      }
+    });
+
+    item.addEventListener('mouseleave', () => {
+      const skillBar = item.querySelector('[data-width]');
+      if (skillBar) {
+        skillBar.style.transform = 'scaleY(1)';
+        skillBar.style.boxShadow = 'none';
+      }
+    });
+  });
+</script>

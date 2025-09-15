@@ -1,0 +1,169 @@
+---
+import type { SEOData } from '@/types/portfolio';
+import '@/styles/global.css';
+
+interface Props {
+  seo?: Partial<SEOData>;
+  class?: string;
+}
+
+const { seo = {}, class: className = '' } = Astro.props;
+
+// Default SEO values
+const defaultSEO: SEOData = {
+  title: 'Kevin - Full Stack Developer',
+  description: 'Passionate full stack developer creating modern web applications with cutting-edge technologies.',
+  keywords: ['Full Stack Developer', 'React', 'TypeScript', 'Node.js', 'Web Development'],
+};
+
+const seoData = { ...defaultSEO, ...seo };
+const pageTitle = seo.title ? `${seo.title} | Kevin` : seoData.title;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={seoData.description} />
+
+    <!-- SEO Meta Tags -->
+    {seoData.keywords && (
+      <meta name="keywords" content={seoData.keywords.join(', ')} />
+    )}
+    <meta name="author" content="Kevin" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={seoData.description} />
+    <meta property="og:type" content="website" />
+    {seoData.ogImage && <meta property="og:image" content={seoData.ogImage} />}
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={seoData.description} />
+    {seoData.ogImage && <meta name="twitter:image" content={seoData.ogImage} />}
+
+    <!-- Canonical URL -->
+    {seoData.canonicalUrl && <link rel="canonical" href={seoData.canonicalUrl} />}
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Preconnect to fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Generator tag -->
+    <meta name="generator" content={Astro.generator} />
+  </head>
+
+  <body class="min-h-screen bg-white text-gray-900 antialiased transition-colors duration-300 dark:bg-gray-900 dark:text-gray-100">
+    <!-- Skip to main content link for accessibility -->
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary-600 focus:text-white focus:rounded-md focus:shadow-lg"
+    >
+      Skip to main content
+    </a>
+
+    <div class={`flex min-h-screen flex-col ${className}`}>
+      <slot />
+    </div>
+
+    <!-- Scroll to top button -->
+    <button
+      id="scroll-to-top"
+      class="fixed bottom-8 right-8 z-40 hidden h-12 w-12 rounded-full bg-primary-600 text-white shadow-lg transition-all duration-300 hover:bg-primary-700 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:bg-primary-500 dark:hover:bg-primary-600"
+      aria-label="Scroll to top"
+    >
+      <svg class="h-6 w-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+      </svg>
+    </button>
+  </body>
+</html>
+
+<script>
+  // Scroll to top functionality
+  const scrollToTopButton = document.getElementById('scroll-to-top');
+
+  if (scrollToTopButton) {
+    // Show/hide scroll to top button
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollToTopButton.classList.remove('hidden');
+      } else {
+        scrollToTopButton.classList.add('hidden');
+      }
+    });
+
+    // Scroll to top when clicked
+    scrollToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+
+  // Add smooth scrolling to all anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href')?.substring(1);
+      if (targetId) {
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
+    });
+  });
+</script>
+
+<style>
+  /* Ensure smooth scrolling works */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+
+  /* Dark mode scrollbar */
+  @media (prefers-color-scheme: dark) {
+    ::-webkit-scrollbar-thumb {
+      background: #475569;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #64748b;
+    }
+  }
+</style>

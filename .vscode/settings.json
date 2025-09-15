@@ -12,13 +12,6 @@
     "scss": true
   },
   "github.copilot.editor.enableAutoCompletions": true,
-  "github.copilot.chat.experimental.codeGeneration.instructions": [
-    "Use TypeScript for all JavaScript code",
-    "Follow Astro best practices",
-    "Use modern ES6+ syntax",
-    "Prefer functional components over class components",
-    "Use semantic HTML elements"
-  ],
 
   // File Association & Language Support
   "files.associations": {
@@ -47,5 +40,12 @@
     "*.ts": "${capture}.js",
     "*.astro": "${capture}.d.ts",
     "package.json": "package-lock.json,yarn.lock,pnpm-lock.yaml"
-  }
+  },
+  "github.copilot.chat.codeGeneration.instructions": [
+    "Use TypeScript for all JavaScript code",
+    "Follow Astro best practices",
+    "Use modern ES6+ syntax",
+    "Prefer functional components over class components",
+    "Use semantic HTML elements"
+  ]
 }

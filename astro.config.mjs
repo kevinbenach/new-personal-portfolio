@@ -1,17 +1,9 @@
 import { defineConfig } from 'astro/config';
+import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
   site: 'https://yourname.dev',
-  integrations: [],
-  vite: {
-    css: {
-      preprocessorOptions: {
-        scss: {
-          additionalData: `@import "src/styles/globals.scss";`
-        }
-      }
-    }
-  },
+  integrations: [tailwind()],
   build: {
     assets: 'assets'
   }

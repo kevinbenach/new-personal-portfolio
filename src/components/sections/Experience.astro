@@ -1,0 +1,219 @@
+---
+import Card from '@/components/ui/Card.astro';
+import Badge from '@/components/ui/Badge.astro';
+import { experiences } from '@/data/experience';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+
+// Format date function
+const formatDate = (dateString: string) => {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+};
+
+// Calculate duration
+const calculateDuration = (startDate: string, endDate?: string) => {
+  const start = new Date(startDate);
+  const end = endDate ? new Date(endDate) : new Date();
+
+  const diffTime = end.getTime() - start.getTime();
+  const diffMonths = Math.ceil(diffTime / (1000 * 60 * 60 * 24 * 30));
+
+  if (diffMonths < 12) {
+    return `${diffMonths} month${diffMonths > 1 ? 's' : ''}`;
+  }
+
+  const years = Math.floor(diffMonths / 12);
+  const remainingMonths = diffMonths % 12;
+
+  if (remainingMonths === 0) {
+    return `${years} year${years > 1 ? 's' : ''}`;
+  }
+
+  return `${years} year${years > 1 ? 's' : ''} ${remainingMonths} month${remainingMonths > 1 ? 's' : ''}`;
+};
+---
+
+<section id="experience" class={`py-20 bg-gray-50 dark:bg-gray-800 ${className}`}>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <h2 class="heading-lg mb-6">Professional Experience</h2>
+        <p class="body-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          My professional journey showcasing growth, challenges overcome, and impact created across different organizations.
+        </p>
+      </div>
+
+      <!-- Timeline -->
+      <div class="relative">
+        <!-- Timeline line -->
+        <div class="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-primary-200 dark:bg-primary-800 transform md:-translate-x-px"></div>
+
+        {experiences.map((experience, index) => (
+          <div class={`relative mb-12 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'} ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}>
+
+            <!-- Timeline dot -->
+            <div class={`absolute w-6 h-6 bg-primary-500 dark:bg-primary-400 rounded-full border-4 border-white dark:border-gray-800 shadow-lg
+              left-5 md:left-1/2 transform md:-translate-x-3 top-8`}>
+            </div>
+
+            <!-- Current position indicator -->
+            {!experience.endDate && (
+              <div class={`absolute w-4 h-4 bg-green-400 rounded-full animate-pulse
+                left-6 md:left-1/2 transform md:-translate-x-2 top-9`}>
+              </div>
+            )}
+
+            <!-- Content Card -->
+            <Card
+              variant="elevated"
+              class={`ml-16 md:ml-0 ${index % 2 === 0 ? 'md:mr-16' : 'md:ml-16'}
+                      hover:shadow-hard transition-all duration-300 experience-card animate-fade-in`}
+              style={`animation-delay: ${index * 0.3}s`}
+            >
+              <div class="p-8">
+
+                <!-- Date and Duration -->
+                <div class="mb-4">
+                  <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+                    <div class="text-primary-600 dark:text-primary-400 font-semibold">
+                      {formatDate(experience.startDate)} - {experience.endDate ? formatDate(experience.endDate) : 'Present'}
+                    </div>
+                    <Badge variant={experience.endDate ? 'secondary' : 'success'} size="sm">
+                      {calculateDuration(experience.startDate, experience.endDate)}
+                    </Badge>
+                  </div>
+                  {!experience.endDate && (
+                    <Badge variant="success" size="sm" class="mb-2">
+                      Current Position
+                    </Badge>
+                  )}
+                </div>
+
+                <!-- Position and Company -->
+                <h3 class="heading-md text-gray-900 dark:text-white mb-2">
+                  {experience.position}
+                </h3>
+                <h4 class="text-lg font-semibold text-primary-600 dark:text-primary-400 mb-4">
+                  {experience.company}
+                </h4>
+
+                <!-- Description -->
+                <p class="text-gray-600 dark:text-gray-400 mb-6">
+                  {experience.description}
+                </p>
+
+                <!-- Technologies -->
+                <div class="mb-6">
+                  <h5 class="font-semibold text-gray-900 dark:text-white mb-3">Technologies Used</h5>
+                  <div class="flex flex-wrap gap-2">
+                    {experience.technologies.map((tech) => (
+                      <Badge variant="primary" size="sm">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+
+                <!-- Key Achievements -->
+                {experience.achievements && experience.achievements.length > 0 && (
+                  <div>
+                    <h5 class="font-semibold text-gray-900 dark:text-white mb-3">Key Achievements</h5>
+                    <ul class="space-y-2">
+                      {experience.achievements.map((achievement) => (
+                        <li class="flex items-start">
+                          <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                          </svg>
+                          <span class="text-sm text-gray-600 dark:text-gray-400">
+                            {achievement}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            </Card>
+          </div>
+        ))}
+      </div>
+
+      <!-- Download Resume -->
+      <div class="text-center mt-16">
+        <Card variant="outlined" class="inline-block p-8">
+          <h3 class="heading-md text-gray-900 dark:text-white mb-4">
+            Want to know more?
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-6">
+            Download my resume for detailed information about my experience, education, and certifications.
+          </p>
+          <button
+            class="inline-flex items-center px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 focus-ring"
+          >
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            Download Resume
+          </button>
+        </Card>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .experience-card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideInUp 0.8s ease-out forwards;
+  }
+
+  @keyframes slideInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .experience-card {
+      transform: translateX(-10px);
+    }
+
+    @keyframes slideInUp {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+</style>
+
+<script>
+  // Animate timeline items as they come into view
+  const observerOptions = {
+    root: null,
+    rootMargin: '-50px 0px',
+    threshold: 0.3
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.experience-card').forEach(card => {
+    observer.observe(card);
+  });
+</script>

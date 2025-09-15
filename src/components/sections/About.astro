@@ -1,0 +1,87 @@
+---
+import Card from '@/components/ui/Card.astro';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<section id="about" class={`py-20 bg-white dark:bg-gray-900 ${className}`}>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <h2 class="heading-lg mb-6">About Me</h2>
+        <p class="body-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          I'm a passionate developer who loves creating digital experiences that make a difference.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+        <!-- Profile Image -->
+        <div class="order-2 lg:order-1">
+          <Card variant="elevated" hover class="p-2 max-w-md mx-auto">
+            <div class="aspect-square rounded-lg bg-gradient-to-br from-primary-400 to-accent-400 flex items-center justify-center">
+              <!-- Placeholder for profile image -->
+              <div class="w-full h-full rounded-lg bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+                <svg class="w-32 h-32 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+              </div>
+            </div>
+          </Card>
+        </div>
+
+        <!-- About Content -->
+        <div class="order-1 lg:order-2 space-y-6">
+          <div>
+            <h3 class="heading-md mb-4 text-primary-600 dark:text-primary-400">
+              Hello! I'm Kevin
+            </h3>
+            <div class="space-y-4 text-gray-600 dark:text-gray-400">
+              <p>
+                I'm a full-stack developer with a passion for creating modern, efficient, and user-friendly web applications.
+                My journey in tech started several years ago, and I've been continuously learning and growing ever since.
+              </p>
+              <p>
+                I specialize in modern JavaScript frameworks, cloud technologies, and building scalable applications.
+                I love solving complex problems and turning ideas into reality through clean, maintainable code.
+              </p>
+              <p>
+                When I'm not coding, you can find me exploring new technologies, contributing to open source projects,
+                or sharing knowledge with the developer community.
+              </p>
+            </div>
+          </div>
+
+          <!-- Key Highlights -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
+            <Card variant="outlined" class="p-6 text-center">
+              <div class="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">3+</div>
+              <div class="text-sm text-gray-600 dark:text-gray-400">Years Experience</div>
+            </Card>
+
+            <Card variant="outlined" class="p-6 text-center">
+              <div class="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">50+</div>
+              <div class="text-sm text-gray-600 dark:text-gray-400">Projects Completed</div>
+            </Card>
+
+            <Card variant="outlined" class="p-6 text-center">
+              <div class="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">15+</div>
+              <div class="text-sm text-gray-600 dark:text-gray-400">Technologies</div>
+            </Card>
+
+            <Card variant="outlined" class="p-6 text-center">
+              <div class="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">∞</div>
+              <div class="text-sm text-gray-600 dark:text-gray-400">Coffee Cups</div>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
