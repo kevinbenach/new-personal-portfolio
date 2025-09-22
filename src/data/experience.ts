@@ -3,61 +3,81 @@ import type { Experience } from '@/types/portfolio';
 export const experiences: Experience[] = [
   {
     id: 'senior-full-stack-developer',
-    company: 'TechCorp Solutions',
-    position: 'Senior Full Stack Developer',
-    startDate: '2022-03',
-    description: 'Led development of scalable web applications serving 100k+ users. Architected and implemented microservices infrastructure, mentored junior developers, and collaborated with cross-functional teams to deliver high-quality products.',
-    technologies: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Docker', 'AWS', 'GraphQL'],
+    company: 'Prime IT - Spain',
+    position: 'Fullstack Developer',
+    startDate: '2023-03',
+    description:
+      'Architected and implemented microservices infrastructure, mentored junior developers, and collaborated with cross-functional teams to deliver high-quality products.',
+    technologies: [
+      'React',
+      'TypeScript',
+      'Node.js',
+      'Express',
+      'MUI',
+      'Formik',
+      'Jest',
+      'Playwright',
+      'REST APIs',
+      'PostgreSQL',
+      'Docker',
+      'AWS',
+      'GraphQL',
+      'Prisma',
+    ],
     achievements: [
-      'Reduced application load times by 40% through performance optimization',
-      'Led a team of 4 developers on a major product redesign',
-      'Implemented CI/CD pipeline reducing deployment time by 60%',
-      'Architected microservices infrastructure handling 1M+ requests/day'
-    ]
+      'Developed a scalable React+TypeScript design system (MUI/Formik), reducing code duplication by 30%',
+      'Implemented performance optimization: lazy loading and memoization, improving load times by 25%',
+      'Built REST APIs with Node.js/Express + PostgreSQL/Prisma, reducing response time by 35%',
+      'Led Jest/Playwright testing efforts (+30% coverage) and mentored junior developers',
+    ],
   },
   {
-    id: 'full-stack-developer',
-    company: 'StartupXYZ',
-    position: 'Full Stack Developer',
-    startDate: '2021-01',
-    endDate: '2022-02',
-    description: 'Developed and maintained multiple client projects using modern web technologies. Collaborated directly with clients to understand requirements and deliver custom solutions within tight deadlines.',
-    technologies: ['Vue.js', 'JavaScript', 'Python', 'Django', 'MongoDB', 'Redis', 'Docker'],
+    id: 'fullstack-developer',
+    company: 'SEIDOR',
+    position: 'Fullstack Developer',
+    startDate: '2022-01',
+    endDate: '2023-03',
+    description:
+      'Developed and maintained multiple client projects using modern web technologies. Collaborated directly with clients to understand requirements and deliver custom solutions within tight deadlines.',
+    technologies: [
+      'React',
+      'Next.js',
+      'JavaScript',
+      'TypeScript',
+      'MongoDB',
+      'REST APIs',
+      'Docker',
+      'Jest',
+      'Redux',
+      'Node.js',
+    ],
     achievements: [
-      'Successfully delivered 15+ client projects on time and under budget',
-      'Built real-time chat application handling 10k+ concurrent users',
+      'Developed Next.js applications (SSR/SSG) with TypeScript, improving SEO and load speed by 40%',
+      'Implemented OAuth 2.0 + JWT with RBAC and documented APIs (OpenAPI)',
       'Implemented automated testing reducing bugs by 35%',
-      'Developed responsive designs for mobile-first approach'
-    ]
+      'Automated CI/CD pipelines with GitLab (+25% delivery efficiency)',
+    ],
   },
   {
     id: 'frontend-developer',
-    company: 'Digital Agency Pro',
+    company: 'RedDoor Software',
     position: 'Frontend Developer',
-    startDate: '2020-06',
-    endDate: '2020-12',
-    description: 'Specialized in creating responsive, accessible web interfaces for various client projects. Worked closely with designers to implement pixel-perfect designs and ensure cross-browser compatibility.',
-    technologies: ['React', 'JavaScript', 'SCSS', 'Webpack', 'Jest', 'Figma'],
+    startDate: '2020-11',
+    endDate: '2022-01',
+    description:
+      'Specialized in creating responsive, accessible web interfaces for various client projects. Worked closely with designers to implement pixel-perfect designs and ensure cross-browser compatibility.',
+    technologies: [
+      'React',
+      'JavaScript',
+      'HTML',
+      'CSS',
+      'SASS',
+      'Git',
+      'Bootstrap',
+    ],
     achievements: [
-      'Created 20+ responsive websites with 100% cross-browser compatibility',
-      'Improved web accessibility scores to WCAG 2.1 AA standards',
-      'Collaborated with design team to establish component design system',
-      'Mentored 2 junior developers in React best practices'
-    ]
+      'Built reusable React components and used Tailwind CSS/Bootstrap, reducing development time by 20%',
+      'Developed interactive dashboards and improved performance, collaborating directly with UI/UX teams',
+    ],
   },
-  {
-    id: 'junior-developer',
-    company: 'WebDev Studio',
-    position: 'Junior Web Developer',
-    startDate: '2019-09',
-    endDate: '2020-05',
-    description: 'Started career developing websites and web applications using HTML, CSS, and JavaScript. Gained experience in various frameworks and tools while contributing to team projects.',
-    technologies: ['HTML', 'CSS', 'JavaScript', 'jQuery', 'PHP', 'MySQL', 'Bootstrap'],
-    achievements: [
-      'Built 10+ websites from scratch using modern web standards',
-      'Contributed to team projects improving code quality',
-      'Learned and implemented responsive design principles',
-      'Participated in code reviews and agile development process'
-    ]
-  }
 ];
