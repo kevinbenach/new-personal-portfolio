@@ -1,4 +1,7 @@
 ---
+import MobileMenu from '@/components/islands/MobileMenu.tsx';
+import ActiveSectionHighlight from '@/components/islands/ActiveSectionHighlight.tsx';
+
 interface Props {
   class?: string;
 }
@@ -43,139 +46,16 @@ const navItems = [
         </div>
       </div>
 
-      <!-- Mobile menu button -->
+      <!-- Mobile menu (only loads JavaScript on mobile devices) -->
       <div class="md:hidden">
-        <button
-          id="mobile-menu-button"
-          type="button"
-          class="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-800 focus-ring"
-          aria-expanded="false"
-          aria-label="Toggle navigation menu"
-        >
-          <span class="sr-only">Open main menu</span>
-          <!-- Hamburger icon -->
-          <svg
-            id="hamburger-icon"
-            class="block h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            aria-hidden="true"
-          >
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-          <!-- Close icon -->
-          <svg
-            id="close-icon"
-            class="hidden h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            aria-hidden="true"
-          >
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-    </div>
-
-    <!-- Mobile Navigation Menu -->
-    <div id="mobile-menu" class="md:hidden hidden">
-      <div class="px-2 pt-2 pb-3 space-y-1 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
-        {navItems.map((item) => (
-          <a
-            href={item.href}
-            class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-gray-800 focus-ring mobile-nav-link"
-          >
-            {item.name}
-          </a>
-        ))}
+        <MobileMenu client:media="(max-width: 768px)" navItems={navItems} />
       </div>
     </div>
   </nav>
+
+  <!-- Active section highlighting (loads when main thread is idle) -->
+  <ActiveSectionHighlight
+    client:idle
+    sections={['home', 'about', 'skills', 'projects', 'experience', 'contact']}
+  />
 </header>
-
-<script>
-  // Mobile menu functionality
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const hamburgerIcon = document.getElementById('hamburger-icon');
-  const closeIcon = document.getElementById('close-icon');
-
-  if (mobileMenuButton && mobileMenu && hamburgerIcon && closeIcon) {
-    mobileMenuButton.addEventListener('click', () => {
-      const isOpen = !mobileMenu.classList.contains('hidden');
-
-      if (isOpen) {
-        // Close menu
-        mobileMenu.classList.add('hidden');
-        hamburgerIcon.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
-        mobileMenuButton.setAttribute('aria-expanded', 'false');
-      } else {
-        // Open menu
-        mobileMenu.classList.remove('hidden');
-        hamburgerIcon.classList.add('hidden');
-        closeIcon.classList.remove('hidden');
-        mobileMenuButton.setAttribute('aria-expanded', 'true');
-      }
-    });
-
-    // Close mobile menu when clicking on a nav link
-    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-    mobileNavLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-        hamburgerIcon.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
-        mobileMenuButton.setAttribute('aria-expanded', 'false');
-      });
-    });
-
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (event) => {
-      const target = event.target as Element;
-      if (!mobileMenuButton.contains(target) && !mobileMenu.contains(target)) {
-        if (!mobileMenu.classList.contains('hidden')) {
-          mobileMenu.classList.add('hidden');
-          hamburgerIcon.classList.remove('hidden');
-          closeIcon.classList.add('hidden');
-          mobileMenuButton.setAttribute('aria-expanded', 'false');
-        }
-      }
-    });
-  }
-
-  // Active section highlighting
-  const observerOptions = {
-    root: null,
-    rootMargin: '-20% 0px -80% 0px',
-    threshold: 0
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // Remove active class from all nav links
-        document.querySelectorAll('nav a[href^="#"]').forEach(link => {
-          link.classList.remove('text-primary-600', 'dark:text-primary-400');
-        });
-
-        // Add active class to current section's nav link
-        const activeLink = document.querySelector(`nav a[href="#${entry.target.id}"]`);
-        if (activeLink) {
-          activeLink.classList.add('text-primary-600', 'dark:text-primary-400');
-        }
-      }
-    });
-  }, observerOptions);
-
-  // Observe sections when they exist
-  const sections = ['home', 'about', 'skills', 'projects', 'experience', 'contact'];
-  sections.forEach(sectionId => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      observer.observe(section);
-    }
-  });
-</script>

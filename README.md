@@ -1,4 +1,3 @@
-
 # 🚀 Kevin's Personal Portfolio
 
 Welcome to my modern, responsive, and blazing-fast developer portfolio, built with [Astro](https://astro.build/), TypeScript, and Tailwind CSS! 🌟
@@ -59,41 +58,45 @@ Welcome to my modern, responsive, and blazing-fast developer portfolio, built wi
 ## ⚙️ Getting Started
 
 1. **Install dependencies**
-	```bash
-	pnpm install
-	# or
-	npm install
-	# or
-	yarn install
-	```
+
+   ```bash
+   pnpm install
+   # or
+   npm install
+   # or
+   yarn install
+   ```
 
 2. **Start the development server**
-	```bash
-	pnpm dev
-	# or
-	npm run dev
-	# or
-	yarn dev
-	```
-	Visit [http://localhost:4321](http://localhost:4321) to view your site.
+
+   ```bash
+   pnpm dev
+   # or
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+   Visit [http://localhost:4321](http://localhost:4321) to view your site.
 
 3. **Build for production**
-	```bash
-	pnpm build
-	# or
-	npm run build
-	# or
-	yarn build
-	```
+
+   ```bash
+   pnpm build
+   # or
+   npm run build
+   # or
+   yarn build
+   ```
 
 4. **Preview the production build**
-	```bash
-	pnpm preview
-	# or
-	npm run preview
-	# or
-	yarn preview
-	```
+   ```bash
+   pnpm preview
+   # or
+   npm run preview
+   # or
+   yarn preview
+   ```
 
 ---
 
@@ -109,17 +112,17 @@ Welcome to my modern, responsive, and blazing-fast developer portfolio, built wi
 
 ## 🧞 Useful Commands
 
-| Command              | Action                                    |
-|----------------------|-------------------------------------------|
-| `pnpm install`       | Install dependencies                      |
-| `pnpm dev`           | Start local dev server (`localhost:4321`) |
-| `pnpm build`         | Build production site to `./dist/`        |
-| `pnpm preview`       | Preview your build locally                |
-| `pnpm lint`          | Lint source code with ESLint              |
-| `pnpm lint:fix`      | Auto-fix linting issues                   |
-| `pnpm type-check`    | Run TypeScript type checking              |
-| `pnpm format`        | Format code with Prettier                 |
-| `pnpm clean`         | Remove build artifacts                    |
+| Command           | Action                                    |
+| ----------------- | ----------------------------------------- |
+| `pnpm install`    | Install dependencies                      |
+| `pnpm dev`        | Start local dev server (`localhost:4321`) |
+| `pnpm build`      | Build production site to `./dist/`        |
+| `pnpm preview`    | Preview your build locally                |
+| `pnpm lint`       | Lint source code with ESLint              |
+| `pnpm lint:fix`   | Auto-fix linting issues                   |
+| `pnpm type-check` | Run TypeScript type checking              |
+| `pnpm format`     | Format code with Prettier                 |
+| `pnpm clean`      | Remove build artifacts                    |
 
 ---
 

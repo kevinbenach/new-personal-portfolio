@@ -1,5 +1,6 @@
 ---
 import type { SEOData } from '@/types/portfolio';
+import ScrollToTop from '@/components/islands/ScrollToTop.tsx';
 import '@/styles/global.css';
 
 interface Props {
@@ -78,42 +79,12 @@ const pageTitle = seo.title ? `${seo.title} | Kevin` : seoData.title;
       <slot />
     </div>
 
-    <!-- Scroll to top button -->
-    <button
-      id="scroll-to-top"
-      class="fixed bottom-8 right-8 z-40 hidden h-12 w-12 rounded-full bg-primary-600 text-white shadow-lg transition-all duration-300 hover:bg-primary-700 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:bg-primary-500 dark:hover:bg-primary-600"
-      aria-label="Scroll to top"
-    >
-      <svg class="h-6 w-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
-      </svg>
-    </button>
+    <!-- Scroll to top button (loads only when visible) -->
+    <ScrollToTop client:visible />
   </body>
 </html>
 
 <script>
-  // Scroll to top functionality
-  const scrollToTopButton = document.getElementById('scroll-to-top');
-
-  if (scrollToTopButton) {
-    // Show/hide scroll to top button
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-        scrollToTopButton.classList.remove('hidden');
-      } else {
-        scrollToTopButton.classList.add('hidden');
-      }
-    });
-
-    // Scroll to top when clicked
-    scrollToTopButton.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-  }
-
   // Add smooth scrolling to all anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
