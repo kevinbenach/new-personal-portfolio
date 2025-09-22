@@ -1,6 +1,5 @@
 ---
 import Button from '@/components/ui/Button.astro';
-import TypewriterText from '@/components/islands/TypewriterText.tsx';
 
 interface Props {
   class?: string;
@@ -22,40 +21,22 @@ const { class: className = '' } = Astro.props;
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="text-center max-w-4xl mx-auto">
 
-      <!-- Greeting -->
-      <div class="animate-fade-in">
-        <p class="text-lg sm:text-xl text-primary-600 dark:text-primary-400 font-medium mb-4">
-          Hi there! 👋 I'm
-        </p>
-      </div>
-
       <!-- Name -->
-      <div class="animate-slide-up" style="animation-delay: 0.2s;">
-        <h1 class="heading-xl mb-6">
-          <span class="text-gradient typing-effect">Kevin</span>
+      <div>
+        <h1 class="heading-xl mb-4">
+          <span class="text-gray-900 dark:text-white">Kevin Benach</span>
         </h1>
       </div>
 
-      <!-- Dynamic Title -->
-      <div class="animate-slide-up" style="animation-delay: 0.4s;">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-700 dark:text-gray-300 mb-8">
-          <TypewriterText
-            client:idle
-            texts={[
-              'Full Stack Developer',
-              'Problem Solver',
-              'UI/UX Enthusiast',
-              'Tech Explorer',
-              'Code Craftsman',
-              'Digital Innovator'
-            ]}
-            className="text-primary-600 dark:text-primary-400"
-          />
+      <!-- Title -->
+      <div>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold text-primary-600 dark:text-primary-400 mb-8">
+          Fullstack Developer
         </h2>
       </div>
 
       <!-- Description -->
-      <div class="animate-slide-up" style="animation-delay: 0.6s;">
+      <div>
         <p class="body-lg text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
           I create modern, accessible, and performant web applications using cutting-edge technologies.
           Passionate about clean code, user experience, and turning complex problems into elegant solutions.
@@ -63,7 +44,7 @@ const { class: className = '' } = Astro.props;
       </div>
 
       <!-- CTA Buttons -->
-      <div class="animate-slide-up flex flex-col sm:flex-row gap-4 justify-center" style="animation-delay: 0.8s;">
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <Button
           href="#projects"
           variant="primary"
@@ -90,7 +71,7 @@ const { class: className = '' } = Astro.props;
       </div>
 
       <!-- Scroll indicator -->
-      <div class="animate-slide-up mt-16" style="animation-delay: 1s;">
+      <div class="mt-16">
         <a
           href="#about"
           class="inline-flex flex-col items-center text-gray-500 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 group"
@@ -98,7 +79,7 @@ const { class: className = '' } = Astro.props;
         >
           <span class="text-sm font-medium mb-2">Learn more about me</span>
           <svg
-            class="h-6 w-6 animate-bounce group-hover:animate-pulse"
+            class="h-6 w-6 group-hover:text-primary-600"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -119,37 +100,3 @@ const { class: className = '' } = Astro.props;
   </div>
 </section>
 
-<style>
-  /* Additional custom animations */
-  @keyframes gradient-shift {
-    0%, 100% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-  }
-
-  .text-gradient {
-    background: linear-gradient(135deg, #3b82f6, #06b6d4, #8b5cf6);
-    background-size: 200% 200%;
-    animation: gradient-shift 4s ease-in-out infinite;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .typing-effect {
-    border-right: 0.15em solid #3b82f6;
-    animation: blink-caret 1s step-end infinite;
-  }
-
-  @keyframes blink-caret {
-    from, to {
-      border-color: transparent;
-    }
-    50% {
-      border-color: #3b82f6;
-    }
-  }
-</style>
