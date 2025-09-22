@@ -101,5 +101,5 @@ export default {
   plugins: [
     require('@tailwindcss/typography'),
   ],
-  darkMode: 'media', // Respects user's system preference
+  darkMode: 'class', // Enables manual dark mode control
 }

@@ -64,6 +64,18 @@ const pageTitle = seo.title ? `${seo.title} | Kevin` : seoData.title;
 
     <!-- Generator tag -->
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Theme initialization script (runs immediately to prevent flash) -->
+    <script is:inline>
+      (function() {
+        const theme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (theme === 'dark' || (!theme && systemDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
   </head>
 
   <body class="min-h-screen bg-white text-gray-900 antialiased transition-colors duration-300 dark:bg-gray-900 dark:text-gray-100">

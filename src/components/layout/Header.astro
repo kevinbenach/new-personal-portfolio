@@ -1,6 +1,7 @@
 ---
 import MobileMenu from '@/components/islands/MobileMenu.tsx';
 import ActiveSectionHighlight from '@/components/islands/ActiveSectionHighlight.tsx';
+import ThemeToggle from '@/components/islands/ThemeToggle.tsx';
 
 interface Props {
   class?: string;
@@ -43,12 +44,19 @@ const navItems = [
               {item.name}
             </a>
           ))}
+          <!-- Theme Toggle -->
+          <div class="ml-4">
+            <ThemeToggle client:load />
+          </div>
         </div>
       </div>
 
       <!-- Mobile menu (only loads JavaScript on mobile devices) -->
       <div class="md:hidden">
-        <MobileMenu client:media="(max-width: 768px)" navItems={navItems} />
+        <div class="flex items-center space-x-2">
+          <ThemeToggle client:load />
+          <MobileMenu client:media="(max-width: 768px)" navItems={navItems} />
+        </div>
       </div>
     </div>
   </nav>
