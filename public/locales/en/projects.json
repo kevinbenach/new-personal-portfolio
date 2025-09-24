@@ -1,0 +1,46 @@
+{
+  "title": "My Projects",
+  "subtitle": "Here are some of the projects I've worked on recently. Each one represents a unique challenge and learning experience.",
+  "status": {
+    "completed": "Completed",
+    "inProgress": "In Progress",
+    "planned": "Planned"
+  },
+  "buttons": {
+    "viewLive": "View Live",
+    "viewCode": "View Code",
+    "learnMore": "Learn More"
+  },
+  "projects": {
+    "ecommerce-platform": {
+      "title": "Modern E-commerce Platform",
+      "description": "Full-stack e-commerce solution with advanced features like real-time inventory, payment processing, and admin dashboard.",
+      "longDescription": "A comprehensive e-commerce platform built with React and Node.js, featuring user authentication, product management, shopping cart functionality, payment integration with Stripe, and a comprehensive admin dashboard for managing orders and inventory."
+    },
+    "task-management-app": {
+      "title": "Collaborative Task Manager",
+      "description": "Real-time task management application with team collaboration features, drag-and-drop interface, and progress tracking.",
+      "longDescription": "A powerful task management application that enables teams to collaborate effectively with features like real-time updates, drag-and-drop task organization, time tracking, file attachments, and comprehensive project analytics."
+    },
+    "weather-dashboard": {
+      "title": "Weather Analytics Dashboard",
+      "description": "Interactive weather dashboard with data visualization, location-based forecasts, and historical weather analysis.",
+      "longDescription": "An advanced weather dashboard that provides detailed weather analytics with interactive charts, multi-location support, weather alerts, and historical data visualization using modern charting libraries."
+    },
+    "social-media-app": {
+      "title": "Social Media Platform",
+      "description": "Full-featured social media application with real-time messaging, content sharing, and social interactions.",
+      "longDescription": "A modern social media platform featuring user profiles, real-time chat, post sharing, likes and comments, story features, and advanced privacy controls built with modern web technologies."
+    },
+    "portfolio-generator": {
+      "title": "Portfolio Generator Tool",
+      "description": "SaaS application that helps developers create professional portfolios with customizable themes and templates.",
+      "longDescription": "A comprehensive portfolio generation tool that allows developers to create professional portfolios by connecting their GitHub, choosing from multiple themes, and customizing layouts without coding knowledge."
+    },
+    "mobile-fitness-app": {
+      "title": "Fitness Tracking Mobile App",
+      "description": "React Native mobile application for fitness tracking with workout plans, progress monitoring, and social features.",
+      "longDescription": "A comprehensive fitness tracking mobile app built with React Native, featuring custom workout creation, progress tracking, social challenges, nutrition logging, and integration with popular fitness devices."
+    }
+  }
+}

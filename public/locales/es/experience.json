@@ -1,0 +1,40 @@
+{
+  "title": "Experiencia Profesional",
+  "subtitle": "Mi recorrido a través de diferentes empresas y roles, construyendo experiencia en desarrollo web moderno.",
+  "current": "Actual",
+  "companies": {
+    "Prime IT - Spain": "Prime IT - España",
+    "SEIDOR": "SEIDOR",
+    "RedDoor Software": "RedDoor Software"
+  },
+  "positions": {
+    "senior-full-stack-developer": {
+      "position": "Desarrollador Fullstack",
+      "description": "Arquitectura e implementación de infraestructura de microservicios, mentoría de desarrolladores junior, y colaboración con equipos multifuncionales para entregar productos de alta calidad.",
+      "achievements": [
+        "Desarrollé un sistema de diseño escalable React+TypeScript (MUI/Formik), reduciendo la duplicación de código en un 30%",
+        "Implementé optimización de rendimiento: lazy loading y memoización, mejorando los tiempos de carga en un 25%",
+        "Construí APIs REST con Node.js/Express + PostgreSQL/Prisma, reduciendo el tiempo de respuesta en un 35%",
+        "Lideré esfuerzos de testing con Jest/Playwright (+30% cobertura) y mentoré desarrolladores junior"
+      ]
+    },
+    "fullstack-developer": {
+      "position": "Desarrollador Fullstack",
+      "description": "Desarrollé y mantuve múltiples proyectos de cliente usando tecnologías web modernas. Colaboré directamente con clientes para entender requisitos y entregar soluciones personalizadas en plazos ajustados.",
+      "achievements": [
+        "Desarrollé aplicaciones Next.js (SSR/SSG) con TypeScript, mejorando SEO y velocidad de carga en un 40%",
+        "Implementé OAuth 2.0 + JWT con RBAC y documenté APIs (OpenAPI)",
+        "Implementé testing automatizado reduciendo bugs en un 35%",
+        "Automaticé pipelines CI/CD con GitLab (+25% eficiencia de entrega)"
+      ]
+    },
+    "frontend-developer": {
+      "position": "Desarrollador Frontend",
+      "description": "Me especialicé en crear interfaces web responsivas y accesibles para varios proyectos de cliente. Trabajé estrechamente con diseñadores para implementar diseños pixel-perfect y asegurar compatibilidad cross-browser.",
+      "achievements": [
+        "Construí componentes React reutilizables y usé Tailwind CSS/Bootstrap, reduciendo el tiempo de desarrollo en un 20%",
+        "Desarrollé dashboards interactivos y mejoré el rendimiento, colaborando directamente con equipos de UI/UX"
+      ]
+    }
+  }
+}

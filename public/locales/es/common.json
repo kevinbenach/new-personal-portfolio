@@ -1,0 +1,77 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "experience": "Experiencia",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "name": "Kevin Benach",
+    "title": "Desarrollador Fullstack",
+    "description": "Creo aplicaciones web modernas, accesibles y eficientes utilizando tecnologías de vanguardia. Apasionado por el código limpio, la experiencia de usuario y convertir problemas complejos en soluciones elegantes.",
+    "viewWork": "Ver Mi Trabajo",
+    "getInTouch": "Contáctame",
+    "learnMore": "Conoce más sobre mí"
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "subtitle": "Soy un desarrollador apasionado que ama crear experiencias digitales que marcan la diferencia.",
+    "greeting": "¡Hola! Soy Kevin",
+    "description1": "Soy un desarrollador full-stack con pasión por crear aplicaciones web modernas, eficientes y fáciles de usar. Mi viaje en tecnología comenzó hace varios años, y he estado aprendiendo y creciendo continuamente desde entonces.",
+    "description2": "Me especializo en frameworks modernos de JavaScript, tecnologías en la nube y construcción de aplicaciones escalables. Me encanta resolver problemas complejos y convertir ideas en realidad a través de código limpio y mantenible.",
+    "description3": "Cuando no estoy programando, puedes encontrarme explorando nuevas tecnologías, contribuyendo a proyectos de código abierto, o compartiendo conocimiento con la comunidad de desarrolladores.",
+    "stats": {
+      "experience": "Años de Experiencia",
+      "projects": "Proyectos Completados",
+      "technologies": "Tecnologías",
+      "coffee": "Tazas de Café"
+    }
+  },
+  "contact": {
+    "title": "Hablemos",
+    "subtitle": "Siempre estoy abierto a discutir nuevas oportunidades, proyectos interesantes, o simplemente tener una gran conversación sobre tecnología.",
+    "information": "Información de Contacto",
+    "quickConnect": "¡Conectemos!",
+    "socialDescription": "Sígueme en redes sociales para actualizaciones y consejos.",
+    "form": {
+      "name": "Tu Nombre",
+      "email": "Tu Email",
+      "subject": "Asunto",
+      "message": "Tu Mensaje",
+      "send": "Enviar Mensaje",
+      "sending": "Enviando...",
+      "success": "¡Mensaje enviado exitosamente!",
+      "error": "Error al enviar mensaje. Por favor intenta de nuevo."
+    },
+    "info": {
+      "email": "Email",
+      "phone": "Teléfono",
+      "location": "Ubicación",
+      "linkedin": "LinkedIn"
+    }
+  },
+  "skills": {
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Base de Datos",
+      "tools": "Herramientas y Otros"
+    }
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "close": "Cerrar",
+    "open": "Abrir",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "continue": "Continuar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "finish": "Finalizar"
+  }
+}

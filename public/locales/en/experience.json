@@ -1,0 +1,40 @@
+{
+  "title": "Professional Experience",
+  "subtitle": "My journey through different companies and roles, building expertise in modern web development.",
+  "current": "Current",
+  "companies": {
+    "Prime IT - Spain": "Prime IT - Spain",
+    "SEIDOR": "SEIDOR",
+    "RedDoor Software": "RedDoor Software"
+  },
+  "positions": {
+    "senior-full-stack-developer": {
+      "position": "Fullstack Developer",
+      "description": "Architected and implemented microservices infrastructure, mentored junior developers, and collaborated with cross-functional teams to deliver high-quality products.",
+      "achievements": [
+        "Developed a scalable React+TypeScript design system (MUI/Formik), reducing code duplication by 30%",
+        "Implemented performance optimization: lazy loading and memoization, improving load times by 25%",
+        "Built REST APIs with Node.js/Express + PostgreSQL/Prisma, reducing response time by 35%",
+        "Led Jest/Playwright testing efforts (+30% coverage) and mentored junior developers"
+      ]
+    },
+    "fullstack-developer": {
+      "position": "Fullstack Developer",
+      "description": "Developed and maintained multiple client projects using modern web technologies. Collaborated directly with clients to understand requirements and deliver custom solutions within tight deadlines.",
+      "achievements": [
+        "Developed Next.js applications (SSR/SSG) with TypeScript, improving SEO and load speed by 40%",
+        "Implemented OAuth 2.0 + JWT with RBAC and documented APIs (OpenAPI)",
+        "Implemented automated testing reducing bugs by 35%",
+        "Automated CI/CD pipelines with GitLab (+25% delivery efficiency)"
+      ]
+    },
+    "frontend-developer": {
+      "position": "Frontend Developer",
+      "description": "Specialized in creating responsive, accessible web interfaces for various client projects. Worked closely with designers to implement pixel-perfect designs and ensure cross-browser compatibility.",
+      "achievements": [
+        "Built reusable React components and used Tailwind CSS/Bootstrap, reducing development time by 20%",
+        "Developed interactive dashboards and improved performance, collaborating directly with UI/UX teams"
+      ]
+    }
+  }
+}

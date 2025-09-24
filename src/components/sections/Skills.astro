@@ -1,6 +1,7 @@
 ---
 import Badge from '@/components/ui/Badge.astro';
 import Card from '@/components/ui/Card.astro';
+import SkillsText from '@/components/islands/SkillsText.tsx';
 import { skillCategories, skills } from '@/data/skills';
 
 interface Props {
@@ -45,14 +46,8 @@ const getSkillIcon = (iconName: string) => {
 <section id="skills" class={`py-20 bg-gray-50 dark:bg-gray-800 ${className}`}>
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-6xl mx-auto">
-      <!-- Section Header -->
-      <div class="text-center mb-16">
-        <h2 class="heading-lg mb-6">Skills & Technologies</h2>
-        <p class="body-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-          A comprehensive overview of the technologies and tools I use to build
-          modern, scalable applications.
-        </p>
-      </div>
+      <!-- Skills Text Island - automatically updates with language changes -->
+      <SkillsText client:only="preact" />
 
       <!-- Skills Grid -->
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
@@ -102,9 +97,6 @@ const getSkillIcon = (iconName: string) => {
 
       <!-- Technology Highlights -->
       <div class="text-center">
-        <h3 class="heading-md mb-8 text-gray-900 dark:text-white">
-          Currently Learning & Exploring
-        </h3>
         <div class="flex flex-wrap justify-center gap-3">
           {
             [
