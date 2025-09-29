@@ -1,5 +1,4 @@
 import { t } from '@/stores/language';
-import Card from '@/components/ui/Card.astro';
 
 export default function AboutText() {
   return (

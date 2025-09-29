@@ -1,5 +1,4 @@
 import { t } from '@/stores/language';
-import Button from '@/components/ui/Button.astro';
 
 export default function HeroText() {
   return (
