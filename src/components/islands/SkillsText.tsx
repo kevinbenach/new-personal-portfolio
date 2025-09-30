@@ -10,13 +10,6 @@ export default function SkillsText() {
           {t.value.skills.subtitle}
         </p>
       </div>
-
-      {/* Technology Highlights */}
-      <div className="text-center">
-        <h3 className="heading-md mb-8 text-gray-900 dark:text-white">
-          {t.value.skills.currentlyLearning}
-        </h3>
-      </div>
     </>
   );
 }
