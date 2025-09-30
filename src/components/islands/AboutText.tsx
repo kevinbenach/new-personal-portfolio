@@ -28,7 +28,7 @@ export default function AboutText() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
           <div className="p-6 text-center bg-white dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600">
             <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">
-              3+
+              5
             </div>
             <div className="text-sm text-gray-600 dark:text-gray-400">
               {t.value.about.stats.experience}
