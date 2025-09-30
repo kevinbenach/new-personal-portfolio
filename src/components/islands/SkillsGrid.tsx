@@ -37,7 +37,19 @@ export default function SkillsGrid() {
       {skillsByCategory.map((category) => (
         <div
           key={category.id}
-          className="p-8 rounded-xl shadow bg-white dark:bg-gray-800"
+          className="
+            group
+            p-8
+            rounded-2xl
+            bg-white/80 dark:bg-gray-900/80
+            border border-gray-200 dark:border-gray-700
+            shadow-sm
+            transition
+            hover:shadow-lg
+            hover:border-primary-300 dark:hover:border-primary-600
+            relative
+            overflow-hidden
+          "
         >
           <div className="flex items-center mb-6">
             <div
@@ -62,7 +74,17 @@ export default function SkillsGrid() {
             {category.skills.map((skill) => (
               <div
                 key={skill.name}
-                className="flex items-center p-3 bg-white dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600 hover:border-primary-300 dark:hover:border-primary-600 transition-colors duration-200"
+                className="
+                  flex items-center
+                  p-3
+                  rounded-lg
+                  bg-white/60 dark:bg-gray-800/60
+                  border border-gray-100 dark:border-gray-700
+                  shadow
+                  transition
+                  hover:bg-primary-50/80 hover:dark:bg-primary-900/40
+                  hover:border-primary-300 hover:dark:border-primary-600
+                "
               >
                 {/* If you want to use SVGs, you can use dangerouslySetInnerHTML or a custom Icon component */}
                 {/* Example: <span dangerouslySetInnerHTML={{ __html: getSkillIcon(skill.iconName) }} /> */}
