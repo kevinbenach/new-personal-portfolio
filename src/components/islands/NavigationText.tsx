@@ -18,7 +18,7 @@ export default function NavigationText() {
         <a
           key={item.href}
           href={item.href}
-          className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-gray-800 focus-ring"
+          className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-gray-800 focus-ring inline-block text-center min-w-[5.5rem]"
         >
           {item.name}
         </a>

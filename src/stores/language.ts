@@ -128,6 +128,24 @@ const allTranslations = {
       required: 'This field is required',
       invalidEmail: 'Please enter a valid email address',
     },
+    footer: {
+      socialLinks: {
+        github: 'Visit my GitHub profile',
+        linkedin: 'Visit my LinkedIn profile',
+        twitter: 'Visit my Twitter profile',
+        email: 'Visit my Email profile',
+      },
+      navigation: {
+        about: 'About',
+        projects: 'Projects',
+        experience: 'Experience',
+        contact: 'Contact',
+      },
+      copyright: 'All rights reserved.',
+      builtWith: 'Built with',
+      and: 'and',
+      backToTop: 'Back to top',
+    },
   },
   es: {
     navigation: {
@@ -252,6 +270,24 @@ const allTranslations = {
         'Lo siento, hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo o contáctame directamente.',
       required: 'Este campo es obligatorio',
       invalidEmail: 'Por favor, introduce una dirección de correo válida',
+    },
+    footer: {
+      socialLinks: {
+        github: 'Visita mi perfil de GitHub',
+        linkedin: 'Visita mi perfil de LinkedIn',
+        twitter: 'Visita mi perfil de Twitter',
+        email: 'Visita mi perfil de Email',
+      },
+      navigation: {
+        about: 'Sobre mí',
+        projects: 'Proyectos',
+        experience: 'Experiencia',
+        contact: 'Contacto',
+      },
+      copyright: 'Todos los derechos reservados.',
+      builtWith: 'Hecho con',
+      and: 'y',
+      backToTop: 'Volver arriba',
     },
   },
 };
