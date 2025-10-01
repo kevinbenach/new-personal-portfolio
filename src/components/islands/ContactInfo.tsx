@@ -16,7 +16,7 @@ export default function ContactInfo() {
     },
     {
       label: t.value.contact.labels.location,
-      value: 'Barcelona, Spain',
+      value: t.value.contact.labels.place,
       href: 'https://www.google.com/maps/place/Barcelona/',
       icon: 'location',
     },

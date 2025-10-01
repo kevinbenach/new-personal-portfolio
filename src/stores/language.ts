@@ -97,8 +97,36 @@ const allTranslations = {
         email: 'Email',
         phone: 'Phone',
         location: 'Location',
+        place: 'Barcelona, Spain',
         linkedin: 'LinkedIn',
       },
+    },
+    form: {
+      heading: 'Send me a message',
+      nameLabel: 'Full Name',
+      namePlaceholder: 'Your full name',
+      emailLabel: 'Email Address',
+      emailPlaceholder: 'your.email@example.com',
+      subjectLabel: 'Subject',
+      subjectPlaceholder: 'Select a subject',
+      subjectOptions: {
+        job: 'Job Opportunity',
+        project: 'Project Collaboration',
+        consulting: 'Consulting Services',
+        inquiry: 'General Inquiry',
+        other: 'Other',
+      },
+      messageLabel: 'Message',
+      messagePlaceholder:
+        'Tell me about your project, opportunity, or just say hello...',
+      submit: 'Send Message',
+      sending: 'Sending...',
+      success:
+        "Thank you! Your message has been sent successfully. I'll get back to you soon.",
+      error:
+        'Sorry, there was an error sending your message. Please try again or contact me directly.',
+      required: 'This field is required',
+      invalidEmail: 'Please enter a valid email address',
     },
   },
   es: {
@@ -185,7 +213,7 @@ const allTranslations = {
     contact: {
       title: 'Hablemos',
       subtitle:
-        'Siempre estoy abierto a discutir nuevas oportunidades, proyectos interesantes, o simplemente tener una gran conversación sobre tecnología.',
+        'Siempre estoy abierto a discutir nuevas oportunidades, proyectos interesantes, o simplemente tener conversación sobre tecnología.',
       information: 'Información de Contacto',
       quickConnect: '¡Conectemos!',
       socialDescription:
@@ -194,8 +222,36 @@ const allTranslations = {
         email: 'Correo',
         phone: 'Teléfono',
         location: 'Ubicación',
+        place: 'Barcelona, España',
         linkedin: 'LinkedIn',
       },
+    },
+    form: {
+      heading: 'Envíame un mensaje',
+      nameLabel: 'Nombre completo',
+      namePlaceholder: 'Tu nombre completo',
+      emailLabel: 'Correo electrónico',
+      emailPlaceholder: 'tu.correo@ejemplo.com',
+      subjectLabel: 'Asunto',
+      subjectPlaceholder: 'Selecciona un asunto',
+      subjectOptions: {
+        job: 'Oportunidad de trabajo',
+        project: 'Colaboración en proyecto',
+        consulting: 'Servicios de consultoría',
+        inquiry: 'Consulta general',
+        other: 'Otro',
+      },
+      messageLabel: 'Mensaje',
+      messagePlaceholder:
+        'Cuéntame sobre tu proyecto, oportunidad, o simplemente saluda...',
+      submit: 'Enviar mensaje',
+      sending: 'Enviando...',
+      success:
+        '¡Gracias! Tu mensaje ha sido enviado correctamente. Te responderé pronto.',
+      error:
+        'Lo siento, hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo o contáctame directamente.',
+      required: 'Este campo es obligatorio',
+      invalidEmail: 'Por favor, introduce una dirección de correo válida',
     },
   },
 };

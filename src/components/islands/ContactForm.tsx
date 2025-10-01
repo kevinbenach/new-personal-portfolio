@@ -1,5 +1,5 @@
-import { useState, useCallback } from 'preact/hooks';
-
+import { useCallback, useState } from 'preact/hooks';
+import { t } from '../../stores/language';
 interface FormData {
   name: string;
   email: string;
@@ -16,7 +16,7 @@ export default function ContactForm() {
     name: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
   });
 
   const [errors, setErrors] = useState<FieldErrors>({});
@@ -28,9 +28,14 @@ export default function ContactForm() {
     const newErrors: FieldErrors = {};
 
     // Validate required fields
-    const requiredFields: (keyof FormData)[] = ['name', 'email', 'subject', 'message'];
+    const requiredFields: (keyof FormData)[] = [
+      'name',
+      'email',
+      'subject',
+      'message',
+    ];
 
-    requiredFields.forEach(field => {
+    requiredFields.forEach((field) => {
       if (!formData[field] || formData[field].trim() === '') {
         newErrors[field] = 'This field is required';
       }
@@ -48,7 +53,7 @@ export default function ContactForm() {
 
   const simulateFormSubmission = async (): Promise<void> => {
     // Simulate API delay
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    await new Promise((resolve) => setTimeout(resolve, 2000));
 
     // Simulate random success/failure for demo purposes
     // In real implementation, this would be an actual API call
@@ -59,54 +64,63 @@ export default function ContactForm() {
     }
   };
 
-  const handleSubmit = useCallback(async (e: Event) => {
-    e.preventDefault();
+  const handleSubmit = useCallback(
+    async (e: Event) => {
+      e.preventDefault();
 
-    // Clear previous messages
-    setShowSuccess(false);
-    setShowError(false);
-    setErrors({});
+      // Clear previous messages
+      setShowSuccess(false);
+      setShowError(false);
+      setErrors({});
 
-    // Validate form
-    if (!validateForm()) {
-      return;
-    }
+      // Validate form
+      if (!validateForm()) {
+        return;
+      }
 
-    // Show loading state
-    setIsSubmitting(true);
+      // Show loading state
+      setIsSubmitting(true);
 
-    try {
-      // Simulate form submission (replace with actual API call)
-      await simulateFormSubmission();
+      try {
+        // Simulate form submission (replace with actual API call)
+        await simulateFormSubmission();
 
-      // Show success message and reset form
-      setShowSuccess(true);
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    } catch (error) {
-      // Show error message
-      setShowError(true);
-    } finally {
-      setIsSubmitting(false);
-    }
-  }, [formData, validateForm]);
+        // Show success message and reset form
+        setShowSuccess(true);
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } catch (error) {
+        // Show error message
+        setShowError(true);
+      } finally {
+        setIsSubmitting(false);
+      }
+    },
+    [formData, validateForm]
+  );
 
-  const handleInputChange = useCallback((
-    e: Event
-  ) => {
-    const target = e.target as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
-    const { name, value } = target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+  const handleInputChange = useCallback(
+    (e: Event) => {
+      const target = e.target as
+        | HTMLInputElement
+        | HTMLSelectElement
+        | HTMLTextAreaElement;
+      const { name, value } = target;
+      setFormData((prev) => ({ ...prev, [name]: value }));
 
-    // Clear error when user starts typing
-    if (errors[name]) {
-      setErrors(prev => ({ ...prev, [name]: '' }));
-    }
-  }, [errors]);
+      // Clear error when user starts typing
+      if (errors[name]) {
+        setErrors((prev) => ({ ...prev, [name]: '' }));
+      }
+    },
+    [errors]
+  );
 
   const getFieldClasses = (fieldName: string): string => {
-    const baseClasses = "w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:text-white transition-colors duration-200";
-    const errorClasses = "border-red-500 focus:ring-red-500 focus:border-red-500";
-    const normalClasses = "border-gray-300 dark:border-gray-600";
+    const baseClasses =
+      'w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:text-white transition-colors duration-200';
+    const errorClasses =
+      'border-red-500 focus:ring-red-500 focus:border-red-500';
+    const normalClasses = 'border-gray-300 dark:border-gray-600';
 
     return `${baseClasses} ${errors[fieldName] ? errorClasses : normalClasses}`;
   };
@@ -114,14 +128,17 @@ export default function ContactForm() {
   return (
     <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-8">
       <h3 className="text-2xl md:text-3xl font-semibold leading-tight text-gray-900 dark:text-white mb-6">
-        Send me a message
+        {t.value.form.heading}
       </h3>
 
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Name Field */}
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-            Full Name *
+          <label
+            htmlFor="name"
+            className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+          >
+            {t.value.form.nameLabel} *
           </label>
           <input
             type="text"
@@ -131,17 +148,22 @@ export default function ContactForm() {
             onChange={handleInputChange}
             required
             className={getFieldClasses('name')}
-            placeholder="Your full name"
+            placeholder={t.value.form.namePlaceholder}
           />
           {errors.name && (
-            <span className="text-red-500 text-sm block mt-1">{errors.name}</span>
+            <span className="text-red-500 text-sm block mt-1">
+              {errors.name}
+            </span>
           )}
         </div>
 
         {/* Email Field */}
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-            Email Address *
+          <label
+            htmlFor="email"
+            className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+          >
+            {t.value.form.emailLabel} *
           </label>
           <input
             type="email"
@@ -151,17 +173,22 @@ export default function ContactForm() {
             onChange={handleInputChange}
             required
             className={getFieldClasses('email')}
-            placeholder="your.email@example.com"
+            placeholder={t.value.form.emailPlaceholder}
           />
           {errors.email && (
-            <span className="text-red-500 text-sm block mt-1">{errors.email}</span>
+            <span className="text-red-500 text-sm block mt-1">
+              {errors.email}
+            </span>
           )}
         </div>
 
         {/* Subject Field */}
         <div>
-          <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-            Subject *
+          <label
+            htmlFor="subject"
+            className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+          >
+            {t.value.form.subjectLabel} *
           </label>
           <select
             id="subject"
@@ -171,22 +198,35 @@ export default function ContactForm() {
             required
             className={getFieldClasses('subject')}
           >
-            <option value="">Select a subject</option>
-            <option value="job-opportunity">Job Opportunity</option>
-            <option value="project-collaboration">Project Collaboration</option>
-            <option value="consulting">Consulting Services</option>
-            <option value="general-inquiry">General Inquiry</option>
-            <option value="other">Other</option>
+            <option value="">{t.value.form.subjectPlaceholder}</option>
+            <option value="job-opportunity">
+              {t.value.form.subjectOptions.job}
+            </option>
+            <option value="project-collaboration">
+              {t.value.form.subjectOptions.project}
+            </option>
+            <option value="consulting">
+              {t.value.form.subjectOptions.consulting}
+            </option>
+            <option value="general-inquiry">
+              {t.value.form.subjectOptions.inquiry}
+            </option>
+            <option value="other">{t.value.form.subjectOptions.other}</option>
           </select>
           {errors.subject && (
-            <span className="text-red-500 text-sm block mt-1">{errors.subject}</span>
+            <span className="text-red-500 text-sm block mt-1">
+              {errors.subject}
+            </span>
           )}
         </div>
 
         {/* Message Field */}
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-            Message *
+          <label
+            htmlFor="message"
+            className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+          >
+            {t.value.form.messageLabel} *
           </label>
           <textarea
             id="message"
@@ -196,10 +236,12 @@ export default function ContactForm() {
             onChange={handleInputChange}
             required
             className={`${getFieldClasses('message')} resize-vertical`}
-            placeholder="Tell me about your project, opportunity, or just say hello..."
+            placeholder={t.value.form.messagePlaceholder}
           />
           {errors.message && (
-            <span className="text-red-500 text-sm block mt-1">{errors.message}</span>
+            <span className="text-red-500 text-sm block mt-1">
+              {errors.message}
+            </span>
           )}
         </div>
 
@@ -212,21 +254,31 @@ export default function ContactForm() {
               inline-flex items-center justify-center font-medium transition-all duration-200
               focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-md
               px-6 py-3 text-lg w-full group
-              ${isSubmitting
-                ? 'bg-gray-400 cursor-not-allowed opacity-75'
-                : 'bg-primary-600 text-white hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 shadow-sm hover:shadow-md'
+              ${
+                isSubmitting
+                  ? 'bg-gray-400 cursor-not-allowed opacity-75'
+                  : 'bg-primary-600 text-white hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 shadow-sm hover:shadow-md'
               }
             `}
           >
-            <span className={isSubmitting ? 'hidden' : 'block'}>Send Message</span>
-            <span className={isSubmitting ? 'block' : 'hidden'}>Sending...</span>
+            <span className={isSubmitting ? 'hidden' : 'block'}>
+              {t.value.form.submit}
+            </span>
+            <span className={isSubmitting ? 'block' : 'hidden'}>
+              {t.value.form.sending}
+            </span>
             <svg
               className={`ml-2 h-5 w-5 transition-transform duration-200 ${isSubmitting ? '' : 'group-hover:translate-x-1'}`}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+              />
             </svg>
           </button>
         </div>
@@ -237,20 +289,36 @@ export default function ContactForm() {
             {showSuccess && (
               <div className="p-4 bg-green-100 border border-green-300 text-green-700 rounded-lg">
                 <div className="flex items-center">
-                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  <svg
+                    className="w-5 h-5 mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clipRule="evenodd"
+                    />
                   </svg>
-                  Thank you! Your message has been sent successfully. I'll get back to you soon.
+                  {t.value.form.success}
                 </div>
               </div>
             )}
             {showError && (
               <div className="p-4 bg-red-100 border border-red-300 text-red-700 rounded-lg">
                 <div className="flex items-center">
-                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                  <svg
+                    className="w-5 h-5 mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                      clipRule="evenodd"
+                    />
                   </svg>
-                  Sorry, there was an error sending your message. Please try again or contact me directly.
+                  {t.value.form.error}
                 </div>
               </div>
             )}
