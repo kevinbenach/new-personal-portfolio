@@ -21,6 +21,7 @@ const allTranslations = {
         'I create modern, accessible, and performant web applications using cutting-edge technologies. Passionate about clean code, user experience, and turning complex problems into elegant solutions.',
       viewWork: 'View My Work',
       getInTouch: 'Get In Touch',
+      downloadResume: 'Download Resume',
       learnMore: 'Learn more about me',
     },
     about: {
@@ -163,6 +164,7 @@ const allTranslations = {
         'Creo aplicaciones web modernas, accesibles y eficientes utilizando tecnologías de vanguardia. Apasionado por el código, la experiencia de usuario y convertir problemas complejos en soluciones elegantes.',
       viewWork: 'Ver Mi Trabajo',
       getInTouch: 'Contáctame',
+      downloadResume: 'Descargar Currículum',
       learnMore: 'Conoce más sobre mí',
     },
     about: {

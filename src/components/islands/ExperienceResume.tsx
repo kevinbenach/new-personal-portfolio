@@ -2,7 +2,7 @@ import { t } from '@/stores/language';
 
 export default function ExperienceResume() {
   return (
-    <div className="mt-20 text-center">
+    <div id="resume-download" className="mt-20 text-center scroll-mt-20">
       <div className="relative max-w-4xl mx-auto">
         {/* Decorative gradient background */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary-50 to-primary-100 dark:from-primary-900/20 dark:to-primary-800/20 rounded-2xl transform rotate-1"></div>
