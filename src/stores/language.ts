@@ -93,6 +93,12 @@ const allTranslations = {
       information: 'Contact Information',
       quickConnect: "Let's Connect!",
       socialDescription: 'Follow me on social media for updates and insights.',
+      labels: {
+        email: 'Email',
+        phone: 'Phone',
+        location: 'Location',
+        linkedin: 'LinkedIn',
+      },
     },
   },
   es: {
@@ -184,6 +190,12 @@ const allTranslations = {
       quickConnect: '¡Conectemos!',
       socialDescription:
         'Sígueme en redes sociales para actualizaciones y consejos.',
+      labels: {
+        email: 'Correo',
+        phone: 'Teléfono',
+        location: 'Ubicación',
+        linkedin: 'LinkedIn',
+      },
     },
   },
 };
