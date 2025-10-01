@@ -126,17 +126,17 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-8">
-      <h3 className="text-2xl md:text-3xl font-semibold leading-tight text-gray-900 dark:text-white mb-6">
+    <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 sm:p-8">
+      <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold leading-tight text-gray-900 dark:text-white mb-6">
         {t.value.form.heading}
       </h3>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
         {/* Name Field */}
         <div>
           <label
             htmlFor="name"
-            className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+            className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
           >
             {t.value.form.nameLabel} *
           </label>
@@ -151,7 +151,7 @@ export default function ContactForm() {
             placeholder={t.value.form.namePlaceholder}
           />
           {errors.name && (
-            <span className="text-red-500 text-sm block mt-1">
+            <span className="text-red-500 text-xs sm:text-sm block mt-1">
               {errors.name}
             </span>
           )}
@@ -161,7 +161,7 @@ export default function ContactForm() {
         <div>
           <label
             htmlFor="email"
-            className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+            className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
           >
             {t.value.form.emailLabel} *
           </label>
@@ -176,7 +176,7 @@ export default function ContactForm() {
             placeholder={t.value.form.emailPlaceholder}
           />
           {errors.email && (
-            <span className="text-red-500 text-sm block mt-1">
+            <span className="text-red-500 text-xs sm:text-sm block mt-1">
               {errors.email}
             </span>
           )}
@@ -186,7 +186,7 @@ export default function ContactForm() {
         <div>
           <label
             htmlFor="subject"
-            className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+            className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
           >
             {t.value.form.subjectLabel} *
           </label>
@@ -214,7 +214,7 @@ export default function ContactForm() {
             <option value="other">{t.value.form.subjectOptions.other}</option>
           </select>
           {errors.subject && (
-            <span className="text-red-500 text-sm block mt-1">
+            <span className="text-red-500 text-xs sm:text-sm block mt-1">
               {errors.subject}
             </span>
           )}
@@ -224,7 +224,7 @@ export default function ContactForm() {
         <div>
           <label
             htmlFor="message"
-            className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+            className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
           >
             {t.value.form.messageLabel} *
           </label>
@@ -239,21 +239,21 @@ export default function ContactForm() {
             placeholder={t.value.form.messagePlaceholder}
           />
           {errors.message && (
-            <span className="text-red-500 text-sm block mt-1">
+            <span className="text-red-500 text-xs sm:text-sm block mt-1">
               {errors.message}
             </span>
           )}
         </div>
 
         {/* Submit Button */}
-        <div className="pt-4">
+        <div className="pt-3 sm:pt-4">
           <button
             type="submit"
             disabled={isSubmitting}
             className={`
               inline-flex items-center justify-center font-medium transition-all duration-200
               focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-md
-              px-6 py-3 text-lg w-full group
+              px-6 py-3 text-base sm:text-lg w-full group min-h-[48px]
               ${
                 isSubmitting
                   ? 'bg-gray-400 cursor-not-allowed opacity-75'
@@ -268,7 +268,7 @@ export default function ContactForm() {
               {t.value.form.sending}
             </span>
             <svg
-              className={`ml-2 h-5 w-5 transition-transform duration-200 ${isSubmitting ? '' : 'group-hover:translate-x-1'}`}
+              className={`ml-2 h-5 w-5 flex-shrink-0 transition-transform duration-200 ${isSubmitting ? '' : 'group-hover:translate-x-1'}`}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

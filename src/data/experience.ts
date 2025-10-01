@@ -25,10 +25,14 @@ export const experiences: Experience[] = [
       'Prisma',
     ],
     achievements: [
-      'Developed a scalable React+TypeScript design system (MUI/Formik), reducing code duplication by 30%',
-      'Implemented performance optimization: lazy loading and memoization, improving load times by 25%',
-      'Built REST APIs with Node.js/Express + PostgreSQL/Prisma, reducing response time by 35%',
-      'Led Jest/Playwright testing efforts (+30% coverage) and mentored junior developers',
+      'Developed a scalable design system with React+TypeScript (MUI)',
+      'Reduced code duplication by 30%',
+      'Implemented performance optimization: lazy loading and memoization',
+      'Improved load times by 25%',
+      'Built REST APIs with Node.js/Express + PostgreSQL/Prisma',
+      'Reduced response time by 35%',
+      'Led testing efforts with Jest/Playwright (+30% coverage)',
+      'Mentored junior developers',
     ],
   },
   {
@@ -52,7 +56,8 @@ export const experiences: Experience[] = [
       'Node.js',
     ],
     achievements: [
-      'Developed Next.js applications (SSR/SSG) with TypeScript, improving SEO and load speed by 40%',
+      'Developed Next.js applications (SSR/SSG) with TypeScript',
+      'Improved SEO and load speed by 40%',
       'Implemented OAuth 2.0 + JWT with RBAC and documented APIs (OpenAPI)',
       'Implemented automated testing reducing bugs by 35%',
       'Automated CI/CD pipelines with GitLab (+25% delivery efficiency)',
@@ -76,7 +81,7 @@ export const experiences: Experience[] = [
       'Bootstrap',
     ],
     achievements: [
-      'Built reusable React components and used Tailwind CSS/Bootstrap, reducing development time by 20%',
+      'Built reusable React components and used Tailwind CSS, reducing development time by 20%',
       'Developed interactive dashboards and improved performance, collaborating directly with UI/UX teams',
     ],
   },

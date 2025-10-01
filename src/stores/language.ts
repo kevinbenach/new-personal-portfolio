@@ -72,6 +72,40 @@ const allTranslations = {
       resumeDescription:
         'Download my resume for detailed information about my experience, education, and certifications.',
       downloadResume: 'Download Resume',
+      jobs: {
+        'senior-full-stack-developer': {
+          description:
+            'Architected and implemented microservices infrastructure, mentored junior developers, and collaborated with cross-functional teams to deliver high-quality products.',
+          achievements: [
+            'Developed a scalable design system with React+TypeScript (MUI)',
+            'Reduced code duplication by 30%',
+            'Implemented performance optimization: lazy loading and memoization',
+            'Improved load times by 25%',
+            'Built REST APIs with Node.js/Express + PostgreSQL/Prisma',
+            'Reduced response time by 35%',
+            'Led testing efforts with Jest/Playwright (+30% coverage)',
+            'Mentored junior developers',
+          ],
+        },
+        'fullstack-developer': {
+          description:
+            'Developed and maintained multiple client projects using modern web technologies. Collaborated directly with clients to understand requirements and deliver custom solutions within tight deadlines.',
+          achievements: [
+            'Developed Next.js applications (SSR/SSG) with TypeScript, improving SEO and load speed by 40%',
+            'Implemented OAuth 2.0 + JWT with RBAC and documented APIs (OpenAPI)',
+            'Implemented automated testing reducing bugs by 35%',
+            'Automated CI/CD pipelines with GitLab (+25% delivery efficiency)',
+          ],
+        },
+        'frontend-developer': {
+          description:
+            'Specialized in creating responsive, accessible web interfaces for various client projects. Worked closely with designers to implement pixel-perfect designs and ensure cross-browser compatibility.',
+          achievements: [
+            'Built reusable React components and used Tailwind CSS, reducing development time by 20%',
+            'Developed interactive dashboards and improved performance, collaborating directly with UI/UX teams',
+          ],
+        },
+      },
     },
     projects: {
       title: 'Featured Projects',
@@ -215,6 +249,40 @@ const allTranslations = {
       resumeDescription:
         'Descarga mi currículum para información detallada sobre mi experiencia, educación y certificaciones.',
       downloadResume: 'Descargar Currículum',
+      jobs: {
+        'senior-full-stack-developer': {
+          description:
+            'Diseñé e implementé infraestructura de microservicios, mentoricé desarrolladores junior y colaboré con equipos multifuncionales para entregar productos de alta calidad.',
+          achievements: [
+            'Desarrollé un sistema de diseño escalable con React+TypeScript (MUI)',
+            'Reduje la duplicación de código en un 30%',
+            'Implementé optimización de rendimiento: lazy loading y memoización',
+            'Mejoré los tiempos de carga en un 25%',
+            'Construí APIs REST con Node.js/Express + PostgreSQL/Prisma',
+            'Reduje el tiempo de respuesta en un 35%',
+            'Lideré los esfuerzos de testing con Jest/Playwright (+30% de cobertura)',
+            'Mentoricé desarrolladores junior',
+          ],
+        },
+        'fullstack-developer': {
+          description:
+            'Desarrollé y mantuve múltiples proyectos de clientes utilizando tecnologías web modernas. Colaboré directamente con los clientes para entender requisitos y entregar soluciones personalizadas dentro de plazos ajustados.',
+          achievements: [
+            'Desarrollé aplicaciones Next.js (SSR/SSG) con TypeScript, mejorando el SEO y la velocidad de carga en un 40%',
+            'Implementé OAuth 2.0 + JWT con RBAC y documenté APIs (OpenAPI)',
+            'Implementé pruebas automatizadas reduciendo errores en un 35%',
+            'Automaticé pipelines CI/CD con GitLab (+25% eficiencia en entregas)',
+          ],
+        },
+        'frontend-developer': {
+          description:
+            'Especializado en crear interfaces web responsivas y accesibles para varios proyectos de clientes. Trabajé estrechamente con diseñadores para implementar diseños pixel-perfect y asegurar compatibilidad entre navegadores.',
+          achievements: [
+            'Construí componentes React reutilizables y usé Tailwind CSS, reduciendo el tiempo de desarrollo en un 20%',
+            'Desarrollé dashboards interactivos y mejoré el rendimiento, colaborando directamente con equipos de UI/UX',
+          ],
+        },
+      },
     },
     projects: {
       title: 'Proyectos Destacados',

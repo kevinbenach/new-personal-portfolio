@@ -38,11 +38,11 @@ export default function ContactInfo() {
 
         <div className="space-y-6">
           {contactInfo.map((info) => (
-            <div key={info.icon} className="flex items-center group">
-              <div className="flex-shrink-0 w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center group-hover:bg-primary-200 dark:group-hover:bg-primary-800 transition-colors duration-200">
+            <div key={info.icon} className="flex items-start group">
+              <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center group-hover:bg-primary-200 dark:group-hover:bg-primary-800 transition-colors duration-200">
                 {info.icon === 'email' && (
                   <svg
-                    className="w-6 h-6 text-primary-600 dark:text-primary-400"
+                    className="w-5 h-5 sm:w-6 sm:h-6 text-primary-600 dark:text-primary-400"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -57,7 +57,7 @@ export default function ContactInfo() {
                 )}
                 {info.icon === 'phone' && (
                   <svg
-                    className="w-6 h-6 text-primary-600 dark:text-primary-400"
+                    className="w-5 h-5 sm:w-6 sm:h-6 text-primary-600 dark:text-primary-400"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -72,7 +72,7 @@ export default function ContactInfo() {
                 )}
                 {info.icon === 'location' && (
                   <svg
-                    className="w-6 h-6 text-primary-600 dark:text-primary-400"
+                    className="w-5 h-5 sm:w-6 sm:h-6 text-primary-600 dark:text-primary-400"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -93,7 +93,7 @@ export default function ContactInfo() {
                 )}
                 {info.icon === 'linkedin' && (
                   <svg
-                    className="w-6 h-6 text-primary-600 dark:text-primary-400"
+                    className="w-5 h-5 sm:w-6 sm:h-6 text-primary-600 dark:text-primary-400"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -101,8 +101,8 @@ export default function ContactInfo() {
                   </svg>
                 )}
               </div>
-              <div className="ml-4 flex-1">
-                <p className="text-sm font-medium text-gray-900 dark:text-white">
+              <div className="ml-3 sm:ml-4 flex-1 min-w-0">
+                <p className="text-xs sm:text-sm font-medium text-gray-900 dark:text-white mb-1">
                   {info.label}
                 </p>
                 <a
@@ -117,7 +117,7 @@ export default function ContactInfo() {
                       ? 'noopener noreferrer'
                       : undefined
                   }
-                  className="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors duration-200"
+                  className="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors duration-200 text-xs sm:text-sm break-all"
                 >
                   {info.value}
                 </a>
@@ -129,18 +129,18 @@ export default function ContactInfo() {
 
       {/* Quick Connect */}
       <div className="p-6 text-center border-2 border-primary-200 dark:border-primary-800 bg-white dark:bg-gray-800 rounded-xl shadow-lg">
-        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+        <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-3">
           {t.value.contact.quickConnect}
         </h3>
-        <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm">
+        <p className="text-gray-600 dark:text-gray-400 mb-4 text-xs sm:text-sm">
           {t.value.contact.socialDescription}
         </p>
-        <div className="flex justify-center space-x-3">
+        <div className="flex justify-center gap-3">
           <a
             href="https://www.linkedin.com/in/kevinbenach/"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-10 h-10 bg-blue-600 hover:bg-blue-700 text-white rounded-lg flex items-center justify-center transition-colors duration-200 focus-ring"
+            className="w-12 h-12 sm:w-10 sm:h-10 bg-blue-600 hover:bg-blue-700 text-white rounded-lg flex items-center justify-center transition-colors duration-200 focus-ring"
             aria-label="LinkedIn Profile"
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -151,7 +151,7 @@ export default function ContactInfo() {
             href="https://github.com/kevinbenach"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-10 h-10 bg-gray-800 hover:bg-gray-900 text-white rounded-lg flex items-center justify-center transition-colors duration-200 focus-ring"
+            className="w-12 h-12 sm:w-10 sm:h-10 bg-gray-800 hover:bg-gray-900 text-white rounded-lg flex items-center justify-center transition-colors duration-200 focus-ring"
             aria-label="GitHub Profile"
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -162,7 +162,7 @@ export default function ContactInfo() {
             href="https://x.com/kevinbenach"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-10 h-10 bg-blue-400 hover:bg-blue-500 text-white rounded-lg flex items-center justify-center transition-colors duration-200 focus-ring"
+            className="w-12 h-12 sm:w-10 sm:h-10 bg-blue-400 hover:bg-blue-500 text-white rounded-lg flex items-center justify-center transition-colors duration-200 focus-ring"
             aria-label="Twitter Profile"
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">

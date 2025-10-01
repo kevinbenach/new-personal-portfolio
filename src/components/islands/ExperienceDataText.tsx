@@ -79,52 +79,52 @@ export default function ExperienceDataText({ experiences }: ExperienceDataTextPr
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-400 to-primary-600 rounded-t-2xl transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
 
             {/* Card Content */}
-            <div className="relative p-8 md:p-10">
+            <div className="relative p-6 sm:p-8 md:p-10">
               {/* Date and Duration */}
               <div className="mb-6">
-                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-3">
-                  <div className="text-primary-700 dark:text-primary-300 font-semibold text-lg mb-2 lg:mb-0">
+                <div className="flex flex-col gap-3 mb-3">
+                  <div className="text-primary-700 dark:text-primary-300 font-semibold text-base sm:text-lg">
                     {formatDate(experience.startDate)} - {experience.endDate ? formatDate(experience.endDate) : t.value.experience.present}
                   </div>
-                  <div className={`inline-flex items-center px-4 py-2 text-sm font-semibold rounded-full ${
+                  <div className={`inline-flex items-center px-3 py-1.5 text-xs sm:text-sm font-semibold rounded-full self-start ${
                     experience.endDate
                       ? 'bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300'
                       : 'bg-gradient-to-r from-green-100 to-emerald-100 text-green-800 dark:from-green-900/50 dark:to-emerald-900/50 dark:text-green-200 shadow-sm'
                   }`}>
-                    <div className={`w-2 h-2 rounded-full mr-2 ${
+                    <div className={`w-2 h-2 rounded-full mr-2 flex-shrink-0 ${
                       experience.endDate ? 'bg-gray-400' : 'bg-green-500 animate-pulse'
                     }`}></div>
-                    {calculateDuration(experience.startDate, experience.endDate)}
+                    <span className="whitespace-nowrap">{calculateDuration(experience.startDate, experience.endDate)}</span>
                   </div>
                 </div>
               </div>
 
               {/* Position and Company */}
               <div className="mb-6">
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2 leading-tight">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2 leading-tight break-words">
                   {experience.position}
                 </h3>
-                <h4 className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-800 dark:from-primary-400 dark:to-primary-600 mb-4">
+                <h4 className="text-lg sm:text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-800 dark:from-primary-400 dark:to-primary-600 mb-4 break-words">
                   {experience.company}
                 </h4>
               </div>
 
               {/* Description */}
-              <p className="text-gray-700 dark:text-gray-300 mb-8 text-lg leading-relaxed">
-                {experience.description}
+              <p className="text-gray-700 dark:text-gray-300 mb-8 text-base sm:text-lg leading-relaxed">
+                {t.value.experience.jobs[experience.id as keyof typeof t.value.experience.jobs]?.description || experience.description}
               </p>
 
               {/* Technologies */}
               <div className="mb-8">
-                <h5 className="font-bold text-gray-900 dark:text-white mb-4 text-lg flex items-center">
-                  <svg className="w-5 h-5 mr-2 text-primary-600 dark:text-primary-400" fill="currentColor" viewBox="0 0 20 20">
+                <h5 className="font-bold text-gray-900 dark:text-white mb-4 text-base sm:text-lg flex items-center">
+                  <svg className="w-5 h-5 mr-2 text-primary-600 dark:text-primary-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
                   </svg>
                   {t.value.experience.technologiesUsed}
                 </h5>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-2 sm:gap-3">
                   {experience.technologies.map((tech: string, techIndex: number) => (
-                    <span key={techIndex} className="inline-flex items-center px-4 py-2 text-sm font-medium rounded-lg bg-gradient-to-r from-primary-50 to-primary-100 text-primary-800 dark:from-primary-900/30 dark:to-primary-800/30 dark:text-primary-200 border border-primary-200 dark:border-primary-800 hover:scale-105 transition-transform duration-200 shadow-sm">
+                    <span key={techIndex} className="inline-flex items-center px-3 py-1.5 text-xs sm:text-sm font-medium rounded-lg bg-gradient-to-r from-primary-50 to-primary-100 text-primary-800 dark:from-primary-900/30 dark:to-primary-800/30 dark:text-primary-200 border border-primary-200 dark:border-primary-800 hover:scale-105 transition-transform duration-200 shadow-sm whitespace-nowrap">
                       {tech}
                     </span>
                   ))}
@@ -134,21 +134,21 @@ export default function ExperienceDataText({ experiences }: ExperienceDataTextPr
               {/* Key Achievements */}
               {experience.achievements && experience.achievements.length > 0 && (
                 <div>
-                  <h5 className="font-bold text-gray-900 dark:text-white mb-4 text-lg flex items-center">
-                    <svg className="w-5 h-5 mr-2 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                  <h5 className="font-bold text-gray-900 dark:text-white mb-4 text-base sm:text-lg flex items-center">
+                    <svg className="w-5 h-5 mr-2 text-green-600 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                     {t.value.experience.keyAchievements}
                   </h5>
                   <ul className="space-y-3">
-                    {experience.achievements.map((achievement: string, achIndex: number) => (
+                    {(t.value.experience.jobs[experience.id as keyof typeof t.value.experience.jobs]?.achievements || experience.achievements).map((achievement: string, achIndex: number) => (
                       <li key={achIndex} className="flex items-start group/achievement">
-                        <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mr-4 mt-0.5 group-hover/achievement:scale-110 transition-transform duration-200 shadow-sm">
-                          <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mr-3 sm:mr-4 mt-0.5 group-hover/achievement:scale-110 transition-transform duration-200 shadow-sm">
+                          <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
                         </div>
-                        <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                        <span className="text-gray-700 dark:text-gray-300 text-sm sm:text-base leading-relaxed flex-1">
                           {achievement}
                         </span>
                       </li>
