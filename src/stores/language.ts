@@ -91,7 +91,8 @@ const allTranslations = {
           description:
             'Developed and maintained multiple client projects using modern web technologies. Collaborated directly with clients to understand requirements and deliver custom solutions within tight deadlines.',
           achievements: [
-            'Developed Next.js applications (SSR/SSG) with TypeScript, improving SEO and load speed by 40%',
+            'Developed Next.js applications (SSR/SSG) with TypeScript',
+            'SEO and load speed improved by 40%',
             'Implemented OAuth 2.0 + JWT with RBAC and documented APIs (OpenAPI)',
             'Implemented automated testing reducing bugs by 35%',
             'Automated CI/CD pipelines with GitLab (+25% delivery efficiency)',
@@ -101,8 +102,10 @@ const allTranslations = {
           description:
             'Specialized in creating responsive, accessible web interfaces for various client projects. Worked closely with designers to implement pixel-perfect designs and ensure cross-browser compatibility.',
           achievements: [
-            'Built reusable React components and used Tailwind CSS, reducing development time by 20%',
-            'Developed interactive dashboards and improved performance, collaborating directly with UI/UX teams',
+            'Built reusable React components and used Tailwind CSS.',
+            'Reduced development time by 20%',
+            'Developed interactive dashboards and improved performance',
+            'Collaborated directly with UI/UX teams',
           ],
         },
       },
@@ -268,7 +271,8 @@ const allTranslations = {
           description:
             'Desarrollé y mantuve múltiples proyectos de clientes utilizando tecnologías web modernas. Colaboré directamente con los clientes para entender requisitos y entregar soluciones personalizadas dentro de plazos ajustados.',
           achievements: [
-            'Desarrollé aplicaciones Next.js (SSR/SSG) con TypeScript, mejorando el SEO y la velocidad de carga en un 40%',
+            'Desarrollé aplicaciones Next.js (SSR/SSG) con TypeScript',
+            'Mejoré el SEO y la velocidad de carga en un 40%',
             'Implementé OAuth 2.0 + JWT con RBAC y documenté APIs (OpenAPI)',
             'Implementé pruebas automatizadas reduciendo errores en un 35%',
             'Automaticé pipelines CI/CD con GitLab (+25% eficiencia en entregas)',
@@ -278,8 +282,10 @@ const allTranslations = {
           description:
             'Especializado en crear interfaces web responsivas y accesibles para varios proyectos de clientes. Trabajé estrechamente con diseñadores para implementar diseños pixel-perfect y asegurar compatibilidad entre navegadores.',
           achievements: [
-            'Construí componentes React reutilizables y usé Tailwind CSS, reduciendo el tiempo de desarrollo en un 20%',
-            'Desarrollé dashboards interactivos y mejoré el rendimiento, colaborando directamente con equipos de UI/UX',
+            'Construí componentes React reutilizables y usé Tailwind CSS.',
+            'Reduje el tiempo de desarrollo en un 20%',
+            'Desarrollé dashboards interactivos y mejoré el rendimiento',
+            'Colaboré directamente con equipos de UI/UX',
           ],
         },
       },
