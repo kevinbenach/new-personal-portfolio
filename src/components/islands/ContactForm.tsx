@@ -51,16 +51,21 @@ export default function ContactForm() {
     return Object.keys(newErrors).length === 0;
   }, [formData]);
 
-  const simulateFormSubmission = async (): Promise<void> => {
-    // Simulate API delay
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+  // Formspree endpoint
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mblzyovk';
 
-    // Simulate random success/failure for demo purposes
-    // In real implementation, this would be an actual API call
-    if (Math.random() > 0.1) {
-      return Promise.resolve();
-    } else {
-      throw new Error('Simulated error');
+  const submitToFormspree = async (): Promise<void> => {
+    const response = await fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+    const result = await response.json();
+    if (!response.ok) {
+      throw new Error(result.error || 'Form submission failed');
     }
   };
 
@@ -82,8 +87,8 @@ export default function ContactForm() {
       setIsSubmitting(true);
 
       try {
-        // Simulate form submission (replace with actual API call)
-        await simulateFormSubmission();
+        // Submit to Formspree
+        await submitToFormspree();
 
         // Show success message and reset form
         setShowSuccess(true);
