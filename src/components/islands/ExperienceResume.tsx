@@ -43,8 +43,8 @@ export default function ExperienceResume() {
             {/* Download Buttons - Static labels for clarity */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
-                href="/cv/resume-en.pdf"
-                download
+                href="/cv/Kevin_Benach_Fullstack_Developer_2025_EN.pdf"
+                download="Kevin_Benach_Fullstack_Developer_2025_EN.pdf"
                 className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary-500/50"
               >
                 <svg
@@ -63,8 +63,8 @@ export default function ExperienceResume() {
                 <span className="text-lg">Download Resume</span>
               </a>
               <a
-                href="/cv/resume-es.pdf"
-                download
+                href="/cv/Kevin_Benach_Fullstack_Developer_2025_ES.pdf"
+                download="Kevin_Benach_Fullstack_Developer_2025_ES.pdf"
                 className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary-500/50"
               >
                 <svg
