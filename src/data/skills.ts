@@ -21,10 +21,10 @@ export const skills: Skill[] = [
     iconName: 'nextjs',
   },
   {
-    name: 'Vue.js',
+    name: 'Preact',
     category: 'frontend',
     proficiency: 'advanced',
-    iconName: 'vue',
+    iconName: 'preact',
   },
   {
     name: 'Astro',
@@ -59,10 +59,10 @@ export const skills: Skill[] = [
     iconName: 'express',
   },
   {
-    name: 'Python',
+    name: 'NestJS',
     category: 'backend',
     proficiency: 'advanced',
-    iconName: 'python',
+    iconName: 'nestjs',
   },
   {
     name: 'FastAPI',
@@ -101,6 +101,12 @@ export const skills: Skill[] = [
     category: 'database',
     proficiency: 'intermediate',
     iconName: 'redis',
+  },
+  {
+    name: 'Mongoose',
+    category: 'database',
+    proficiency: 'intermediate',
+    iconName: 'mongoose',
   },
   {
     name: 'Prisma',
