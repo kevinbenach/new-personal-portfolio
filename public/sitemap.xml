@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Homepage (English) -->
+  <url>
+    <loc>https://yourname.dev/</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yourname.dev/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://yourname.dev/?lang=es" />
+  </url>
+
+  <!-- Projects Section -->
+  <url>
+    <loc>https://yourname.dev/#projects</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Skills Section -->
+  <url>
+    <loc>https://yourname.dev/#skills</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Experience Section -->
+  <url>
+    <loc>https://yourname.dev/#experience</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Contact Section -->
+  <url>
+    <loc>https://yourname.dev/#contact</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
