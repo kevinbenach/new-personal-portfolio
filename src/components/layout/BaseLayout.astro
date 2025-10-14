@@ -1,6 +1,14 @@
 ---
 import type { SEOData } from '@/types/portfolio';
 import ScrollToTop from '@/components/islands/ScrollToTop.tsx';
+
+// Self-hosted fonts (optimized, no external requests)
+import '@fontsource/inter/300.css'; // Light
+import '@fontsource/inter/400.css'; // Regular
+import '@fontsource/inter/500.css'; // Medium
+import '@fontsource/inter/600.css'; // Semibold
+import '@fontsource/inter/700.css'; // Bold
+
 import '@/styles/global.css';
 
 interface Props {
@@ -53,14 +61,6 @@ const pageTitle = seo.title ? `${seo.title} | Kevin` : seoData.title;
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
-    <!-- Preconnect to fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
 
     <!-- Generator tag -->
     <meta name="generator" content={Astro.generator} />
