@@ -77,8 +77,11 @@ export default function MobileNavigationMenu() {
       </button>
 
       {/* Mobile Navigation Menu */}
-      <div id="mobile-menu" className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'}`}>
-        <div className="px-2 pt-2 pb-3 space-y-1 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
+      <div
+        id="mobile-menu"
+        className={`${isMenuOpen ? 'block' : 'hidden'} md:hidden absolute top-16 left-0 right-0 z-40`}
+      >
+        <div className="px-2 pt-2 pb-3 space-y-1 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 shadow-lg">
           {navItems.map((item) => (
             <a
               key={item.href}
