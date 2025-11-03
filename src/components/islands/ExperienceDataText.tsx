@@ -38,18 +38,18 @@ export default function ExperienceDataText({
 
   return (
     <div className="relative max-w-5xl mx-auto">
-      {/* Enhanced Timeline line with gradient */}
-      <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary-200 via-primary-300 to-primary-200 dark:from-primary-800 dark:via-primary-700 dark:to-primary-800 transform md:-translate-x-px rounded-full shadow-sm"></div>
+      {/* Enhanced Timeline line with gradient - Hidden on mobile for minimalist look */}
+      <div className="hidden md:block absolute md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary-200 via-primary-300 to-primary-200 dark:from-primary-800 dark:via-primary-700 dark:to-primary-800 transform md:-translate-x-px rounded-full shadow-sm"></div>
 
       {experiences.map((experience, index) => (
         <div
           key={index}
           className={`relative mb-16 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'} ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}
         >
-          {/* Enhanced Timeline dot with gradient ring */}
+          {/* Enhanced Timeline dot with gradient ring - Hidden on mobile for minimalist look */}
           <div
-            className={`absolute w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-600 dark:from-primary-500 dark:to-primary-700 rounded-full border-4 border-white dark:border-gray-800 shadow-xl
-            left-2 md:left-1/2 transform md:-translate-x-6 top-6 flex items-center justify-center group hover:scale-110 transition-transform duration-300`}
+            className={`hidden md:flex absolute w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-600 dark:from-primary-500 dark:to-primary-700 rounded-full border-4 border-white dark:border-gray-800 shadow-xl
+            md:left-1/2 transform md:-translate-x-6 top-6 items-center justify-center group hover:scale-110 transition-transform duration-300`}
           >
             {/* Icon inside dot */}
             <div className="w-4 h-4 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center">
@@ -62,19 +62,19 @@ export default function ExperienceDataText({
             )}
           </div>
 
-          {/* Current position indicator */}
+          {/* Current position indicator - Only visible on mobile for minimalist look */}
           {!experience.endDate && (
             <div
-              className={`absolute px-3 py-1 bg-green-500 text-white text-xs font-semibold rounded-full shadow-lg
-              left-16 md:left-1/2 md:transform md:-translate-x-1/2 top-0 animate-pulse`}
+              className={`md:hidden absolute px-3 py-1 bg-green-500 text-white text-xs font-semibold rounded-full shadow-lg
+              right-4 top-4 animate-pulse z-10`}
             >
               {t.value.experience.current}
             </div>
           )}
 
-          {/* Enhanced Content Card */}
+          {/* Enhanced Content Card - No left margin on mobile for minimalist look */}
           <div
-            className={`ml-20 md:ml-0 ${index % 2 === 0 ? 'md:mr-20' : 'md:ml-20'}
+            className={`md:ml-0 ${index % 2 === 0 ? 'md:mr-20' : 'md:ml-20'}
                         group relative overflow-hidden`}
             style={{ animationDelay: `${index * 0.2}s` }}
           >
