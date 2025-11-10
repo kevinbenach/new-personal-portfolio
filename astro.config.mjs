@@ -1,9 +1,9 @@
-import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
 import preact from '@astrojs/preact';
+import tailwind from '@astrojs/tailwind';
+import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://yourname.dev',
+  site: 'https://kevinbenach.com',
   integrations: [
     tailwind(),
     preact()
