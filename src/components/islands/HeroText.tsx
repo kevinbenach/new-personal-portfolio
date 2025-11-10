@@ -12,7 +12,7 @@ export default function HeroText() {
   return (
     <div className="text-center max-w-4xl mx-auto">
       {/* Name */}
-      <div>
+      <div className="mt-12 sm:mt-0">
         <h1 className="heading-xl mb-4">
           <span className="text-gray-900 dark:text-white">
             {t.value.hero.name}
