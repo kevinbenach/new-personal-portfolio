@@ -9,7 +9,7 @@ export const projects: Project[] = [
     technologies: ['React', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'OAuth', 'Tailwind CSS', 'Docker'],
     githubUrl: 'https://github.com/yourusername/ecommerce-platform',
     liveUrl: 'https://goagain.pages.dev',
-    imageUrl: '/images/projects/ecommerce.jpg',
+    imageUrl: 'goagain-preview.avif',
     featured: true,
     status: 'completed',
     category: 'web'
@@ -22,7 +22,7 @@ export const projects: Project[] = [
     technologies: ['React', 'GraphQL', 'TypeScript', 'Vite', 'Styled Components', 'Cloudflare Pages', 'Zustand', 'Apollo Client'],
     githubUrl: 'https://github.com/kevinbenach/github-issues-viewer',
     liveUrl: 'https://github-issues-viewer.pages.dev/',
-    imageUrl: '/images/projects/taskmanager.jpg',
+    imageUrl: 'issues-viewer-preview.avif',
     featured: true,
     status: 'completed',
     category: 'web'
@@ -34,8 +34,8 @@ export const projects: Project[] = [
     longDescription: 'An advanced portfolio website that showcases my projects and blog posts with a modern design, fast performance, and seamless user experience using Astro and Preact.',
     technologies: ['Astro', 'Preact', 'TypeScript', 'Tailwind', 'Vite', 'Cloudflare Pages'],
     githubUrl: 'https://github.com/kevinbenach/new-personal-portfolio',
-    liveUrl: 'https://kevinbenach.com', 
-    imageUrl: '/images/projects/weather.jpg',
+    liveUrl: 'https://kevinbenach.com',
+    imageUrl: 'portfolio-preview.avif',
     featured: true,
     status: 'completed',
     category: 'web'

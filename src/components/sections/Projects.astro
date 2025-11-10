@@ -1,6 +1,19 @@
 ---
+import { Image } from 'astro:assets';
 import ProjectsText from '@/components/islands/ProjectsText.tsx';
 import { featuredProjects } from '@/data/projects';
+
+// Import all project images
+import goagainImage from '@/assets/images/projects/goagain-preview.avif';
+import issuesViewerImage from '@/assets/images/projects/issues-viewer-preview.avif';
+import portfolioImage from '@/assets/images/projects/portfolio-preview.avif';
+
+// Map image filenames to imported modules
+const imageMap: Record<string, any> = {
+  'goagain-preview.avif': goagainImage,
+  'issues-viewer-preview.avif': issuesViewerImage,
+  'portfolio-preview.avif': portfolioImage,
+};
 
 interface Props {
   class?: string;
@@ -14,7 +27,7 @@ const { class: className = '' } = Astro.props;
     <div class="max-w-6xl mx-auto">
 
       <!-- Projects Text Island - automatically updates with language changes -->
-      <ProjectsText client:only="preact" projects={featuredProjects} />
+      <ProjectsText client:only="preact" projects={featuredProjects} imageMap={imageMap} />
 
     </div>
   </div>

@@ -2,9 +2,10 @@ import { t } from '@/stores/language';
 
 interface ProjectsTextProps {
   projects: any[];
+  imageMap: Record<string, any>;
 }
 
-export default function ProjectsText({ projects }: ProjectsTextProps) {
+export default function ProjectsText({ projects, imageMap }: ProjectsTextProps) {
   // Status colors
   const getStatusColor = (status: string) => {
     switch (status) {
@@ -44,12 +45,22 @@ export default function ProjectsText({ projects }: ProjectsTextProps) {
           >
             {/* Project Image */}
             <div className="aspect-video bg-gradient-to-br from-primary-100 to-accent-100 dark:from-primary-900 dark:to-accent-900 flex items-center justify-center relative overflow-hidden">
-              {/* Placeholder for project image */}
-              <div className="w-full h-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                <svg className="w-16 h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                </svg>
-              </div>
+              {/* Project image */}
+              {imageMap[project.imageUrl] ? (
+                <img
+                  src={imageMap[project.imageUrl].src}
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                />
+              ) : (
+                <div className="w-full h-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+                  <svg className="w-16 h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                  </svg>
+                </div>
+              )}
               {/* Status Badge */}
               <div className="absolute top-4 right-4">
                 <span className={`inline-block px-2 py-1 text-xs font-medium rounded-md ${
